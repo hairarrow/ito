@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const StyledConversation = styled.section`
 	max-width: 800px;
+	padding: 8px;
 	padding-top: 40px;
 	margin: auto;
 	display: grid;

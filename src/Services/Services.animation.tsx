@@ -14,7 +14,7 @@ export function useAnimation(ref: any) {
 					translateX: (_, i) =>
 						i % 2 ? ["100%", "0%"] : ["-100%", "0%"]
 				},
-				"+=2000"
+				"+=200"
 			)
 			.add({
 				targets: ".service-tags",

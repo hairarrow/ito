@@ -1,16 +1,17 @@
-import React, { useRef, useState, useCallback } from "react";
+import React, { useRef, useState, useCallback, useContext } from "react";
 import StyledGreeting from "./Greeting.styles";
 import { useAnimation } from "./Greeting.animation";
 import convertToLetters from "../convertToLetters";
 import FEATURED_WORK from "./FEATURED_WORK";
+import { ContactContext } from "../Contact/Contact.context";
 
 const Greeting = () => {
-	const [msgOpen, setMsgOpen] = useState(false);
+	const { dispatch } = useContext(ContactContext);
 	const containerRef = useRef(null);
 	useAnimation(containerRef);
 
-	const onToggleMsg = () => setMsgOpen(!msgOpen);
-	const toggleMsg = useCallback(onToggleMsg, [msgOpen]);
+	const toggleMsg = () =>
+		dispatch({ type: "UpdateShowMessage", value: true });
 
 	return (
 		<StyledGreeting ref={containerRef}>

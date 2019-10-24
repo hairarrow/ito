@@ -35,6 +35,7 @@ const StyledGreeting = styled.article`
 		}
 
 		&--hello {
+			margin-top: 5vh;
 			border-bottom-left-radius: 8px;
 		}
 

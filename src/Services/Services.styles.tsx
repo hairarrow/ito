@@ -40,15 +40,18 @@ const ServicesStyles = styled.section`
 	}
 
 	.service {
-		padding: 16px 24px;
-		border: 10px solid;
-		border-image: var(--gradient);
-		border-image-slice: 1;
+		padding: 40px;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
 		overflow: hidden;
+		border-radius: 20px;
+		background: rgba(0, 0, 0, 0.03);
 		opacity: 0;
+
+		@media (prefers-color-scheme: dark) {
+			background: rgba(255, 255, 255, 0.05);
+		}
 
 		&:first-child {
 			grid-row: 1 / 2;
