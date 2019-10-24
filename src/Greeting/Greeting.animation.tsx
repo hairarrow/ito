@@ -22,7 +22,7 @@ export function useAnimation(ref: any) {
 	useEffect(() => {
 		if (!ref) return;
 		anime
-			.timeline({ loop: false, duration: 0 })
+			.timeline({ loop: false })
 			.add({
 				targets: ".greeting--hello",
 				...greetingIn()
