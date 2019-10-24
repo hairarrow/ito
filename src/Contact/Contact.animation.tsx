@@ -7,23 +7,12 @@ export default function useAnimation(ref: any, open = false) {
 
 		if (!ref) return;
 		if (!open)
-			anime
-				.timeline({
-					easing: "easeOutCirc",
-					duration: 240
-				})
-				.add({
-					targets: [".cancel", ".form", ".title"],
-					delay: anime.stagger(100),
-					opacity
-				})
-				.add(
-					{
-						targets: ".msg",
-						opacity
-					},
-					"-=140"
-				);
+			anime({
+				targets: ".msg",
+				easing: "easeOutCirc",
+				duration: 240,
+				opacity
+			});
 		else
 			anime
 				.timeline({

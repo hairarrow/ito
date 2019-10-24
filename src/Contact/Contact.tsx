@@ -19,6 +19,7 @@ const Contact = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
+		toggle();
 	};
 	const handleChangeEmail = (e) => {
 		const { valid: email } = e.target.validity;

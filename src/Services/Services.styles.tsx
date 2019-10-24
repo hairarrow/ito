@@ -46,11 +46,14 @@ const ServicesStyles = styled.section`
 		justify-content: space-between;
 		overflow: hidden;
 		border-radius: 20px;
-		background: rgba(0, 0, 0, 0.03);
+		background: #fff;
+		box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.08),
+			0 0 0 1px rgba(0, 0, 0, 0.04);
 		opacity: 0;
 
 		@media (prefers-color-scheme: dark) {
 			background: rgba(255, 255, 255, 0.05);
+			box-shadow: 0 8px 20px 0 rgba(255, 255, 255, 0.04);
 		}
 
 		&:first-child {

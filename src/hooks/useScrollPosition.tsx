@@ -14,7 +14,6 @@ const useScrollPosition = (
 	const wdw = useRef(typeof window !== "undefined" ? window : null);
 
 	const handleScroll = () => {
-		console.log("scroll");
 		if (el.current)
 			setDistanceFromTop(el.current.getBoundingClientRect().top);
 	};

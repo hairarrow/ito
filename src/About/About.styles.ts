@@ -43,6 +43,22 @@ const AboutStyles = styled.section`
 		}
 	}
 
+	.content-title {
+		display: inline-block;
+		font-weight: 800;
+		font-size: 32px;
+		line-height: 64px;
+		margin-bottom: 16px;
+		margin: 0;
+		background: linear-gradient(
+			to bottom right,
+			var(--accent),
+			rgba(255, 12, 253, 1)
+		);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
 	.content-container {
 		margin: 80px auto;
 		position: relative;
@@ -51,6 +67,8 @@ const AboutStyles = styled.section`
 		padding: 24px;
 		background: var(--bg-color);
 		border-radius: 40px;
+		box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.08),
+			0 0 0 1px rgba(0, 0, 0, 0.04);
 		opacity: 0;
 
 		@media (${(props) => props.theme.breakpoints.sm.up}) {

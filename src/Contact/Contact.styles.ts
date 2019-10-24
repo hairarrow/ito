@@ -10,6 +10,7 @@ const Styled = styled.section`
 	padding: 24px;
 	color: var(--bg-color);
 	backdrop-filter: blur(40px) brightness(33%) saturate(120%);
+	opacity: 0;
 
 	&:not(.msg--open) {
 		pointer-events: none;
@@ -29,6 +30,10 @@ const Styled = styled.section`
 		font-size: 28px;
 		margin-bottom: 16px;
 		opacity: 0;
+
+		@media (prefers-color-scheme: dark) {
+			color: var(--fg-color);
+		}
 	}
 
 	.cancel {

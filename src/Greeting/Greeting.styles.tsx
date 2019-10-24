@@ -126,7 +126,9 @@ const StyledGreeting = styled.article`
 			background: rgba(255, 255, 255, 1);
 			border-radius: 20px;
 			opacity: 0;
-			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.075);
+			box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.08),
+				0 0 0 1px rgba(0, 0, 0, 0.04);
+
 			transition: transform 240ms cubic-bezier(0.22, 0.61, 0.36, 1);
 
 			@media (prefers-color-scheme: dark) {
