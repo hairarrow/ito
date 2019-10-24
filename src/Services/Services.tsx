@@ -1,4 +1,47 @@
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
+import ServicesStyles from "./Services.styles";
+import useScrollPosition from "../hooks/useScrollPosition";
+import { useAnimation } from "./Services.animation";
+
+const Services = () => {
+	const containerRef = useRef<HTMLElement>(null);
+	const [hasPlayed, setHasPlayed] = useState(false);
+	const [isPlaying, setIsPlaying] = useState(false);
+	const [scrollPosition, cleanupScroll] = useScrollPosition(containerRef);
+	useAnimation(hasPlayed && containerRef);
+
+	useEffect(() => {
+		if (scrollPosition)
+			setIsPlaying(scrollPosition <= window.innerHeight / 2);
+	}, [scrollPosition]);
+
+	useEffect(() => {
+		if (isPlaying && !hasPlayed) {
+			setHasPlayed(true);
+			cleanupScroll();
+		}
+	}, [isPlaying]);
+
+	return (
+		<ServicesStyles ref={containerRef}>
+			<span className="services-container">
+				{SERVICES.map(({ title, description, tags }) => (
+					<article key={title} className="service">
+						<h1 className="service-title">{title}</h1>
+						<p className="service-description">{description}</p>
+						<ul className="service-tags">
+							{tags.map((tag) => (
+								<li key={tag} className="service-tag">
+									{tag}
+								</li>
+							))}
+						</ul>
+					</article>
+				))}
+			</span>
+		</ServicesStyles>
+	);
+};
 
 const SERVICES = [
 	{
@@ -68,22 +111,5 @@ const SERVICES = [
 		tags: ["A11y", "Automatic ADA-Tests"]
 	}
 ];
-
-const Services = () => (
-	<section>
-		<h3>Services</h3>
-		{SERVICES.map((props) => (
-			<article key={props.title}>
-				<h1>{props.title}</h1>
-				<p>{props.description}</p>
-				<aside>
-					{props.tags.map((tag) => (
-						<span key={tag}>{tag}</span>
-					))}
-				</aside>
-			</article>
-		))}
-	</section>
-);
 
 export default Services;

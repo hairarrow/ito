@@ -5,18 +5,22 @@ import useScrollPosition from "../hooks/useScrollPosition";
 import useAnimation from "./Conversation.animation";
 
 const Conversation = () => {
+	const containerRef = useRef<HTMLElement>(null);
 	const [hasPlayed, setHasPlayed] = useState(false);
 	const [isPlaying, setIsPlaying] = useState(false);
-	const containerRef = useRef<HTMLElement>(null);
-	const scrollPosition = useScrollPosition(containerRef);
+	const [scrollPosition, cleanupScroll] = useScrollPosition(containerRef);
 	useAnimation(containerRef, hasPlayed);
 
 	useEffect(() => {
-		setIsPlaying(scrollPosition <= 200);
+		if (scrollPosition)
+			setIsPlaying(scrollPosition <= window.innerHeight / 2);
 	}, [scrollPosition]);
 
 	useEffect(() => {
-		if (isPlaying && !hasPlayed) setHasPlayed(true);
+		if (isPlaying && !hasPlayed) {
+			setHasPlayed(true);
+			cleanupScroll();
+		}
 	}, [isPlaying]);
 
 	return (

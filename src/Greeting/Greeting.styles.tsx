@@ -90,7 +90,7 @@ const StyledGreeting = styled.article`
 		border-radius: 40px;
 		opacity: 0;
 
-		@media (min-width: 500px) {
+		@media (${(props) => props.theme.breakpoints.sm.up}) {
 			padding: 40px 40px 56px;
 		}
 

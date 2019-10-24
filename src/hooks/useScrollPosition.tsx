@@ -1,24 +1,41 @@
-import { useEffect, MutableRefObject, useState } from "react";
+import {
+	useEffect,
+	MutableRefObject,
+	useState,
+	useRef,
+	useCallback
+} from "react";
 import throttle from "lodash/throttle";
 
-const useScrollPosition = (el: MutableRefObject<HTMLElement>) => {
+const useScrollPosition = (
+	el: MutableRefObject<HTMLElement>
+): [number, () => void] | [] => {
 	const [distanceFromTop, setDistanceFromTop] = useState<number>(undefined);
+	const wdw = useRef(typeof window !== "undefined" ? window : null);
 
 	const handleScroll = () => {
+		console.log("scroll");
 		if (el.current)
 			setDistanceFromTop(el.current.getBoundingClientRect().top);
 	};
 
+	const onScroll = throttle(handleScroll, 200);
+	const scroll = useCallback(onScroll, [el]);
+
+	const onDestroy = () => {
+		wdw.current.removeEventListener("scroll", scroll);
+	};
+	const destroy = useCallback(onDestroy, [el]);
+
 	useEffect(() => {
-		window.addEventListener("scroll", throttle(handleScroll, 200));
+		wdw.current.addEventListener("scroll", scroll);
 
-		return () =>
-			window.removeEventListener("scroll", throttle(handleScroll, 200));
-	});
+		return destroy;
+	}, [el]);
 
-	if (typeof window === "undefined" || !el.current) return undefined;
+	if (typeof window === "undefined" || !el.current) return [];
 
-	return distanceFromTop;
+	return [distanceFromTop, destroy];
 };
 
 export default useScrollPosition;

@@ -5,6 +5,12 @@ const theme = {
 		bg: "#fff",
 		fg: "rgba(0, 0, 0, 0.8)",
 		accent: "rgba(0, 98, 255, 1)"
+	},
+	breakpoints: {
+		sm: {
+			up: "min-width: 500px",
+			down: "max-width: 500px"
+		}
 	}
 };
 

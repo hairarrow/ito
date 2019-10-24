@@ -1,4 +1,4 @@
-import { useEffect, MutableRefObject } from "react";
+import { useEffect } from "react";
 import anime from "animejs";
 
 const greetingIn = () => ({
@@ -20,6 +20,7 @@ const greetingLetterIn = () => ({
 
 export function useAnimation(ref: any) {
 	useEffect(() => {
+		if (!ref) return;
 		anime
 			.timeline({ loop: false, duration: 0 })
 			.add({
