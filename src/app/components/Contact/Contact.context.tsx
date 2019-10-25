@@ -21,17 +21,17 @@ function reducer(state: TState, action: TAction): TState {
 }
 
 function createContactContext() {
-	const ctx = createContext({
+	const Ctx = createContext({
 		state: initialState,
-		dispatch: (action: TAction) => null
+		dispatch: (_: TAction) => null
 	});
 
 	const Provider = (props: PropsWithChildren<any>) => {
 		const [state, dispatch] = useReducer(reducer, initialState);
-		return <ctx.Provider value={{ state, dispatch }} {...props} />;
+		return <Ctx.Provider value={{ state, dispatch }} {...props} />;
 	};
 
-	return [ctx, Provider] as const;
+	return [Ctx, Provider] as const;
 }
 
 export const [ContactContext, ContactContextProvider] = createContactContext();

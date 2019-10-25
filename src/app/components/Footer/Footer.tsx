@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState, useContext } from "react";
 import Message from "../Conversation/Message";
 import FooterStyles from "./Footer.styles";
 import anime from "animejs";
-import useScrollPosition from "../hooks/useScrollPosition";
+import useScrollPosition from "../../hooks/useScrollPosition";
 import Button from "../Button";
 import { ContactContext } from "../Contact/Contact.context";
 

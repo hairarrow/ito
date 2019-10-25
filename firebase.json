@@ -1,0 +1,21 @@
+{
+	"functions": {
+		"source": "dist/functions",
+		"predeploy": [
+			"npm run build-functions",
+			"npm run build",
+			"npm run copy-deps",
+			"npm run install-deps"
+		]
+	},
+	"hosting": {
+		"public": "dist/public",
+		"rewrites": [
+			{
+				"source": "**/**",
+				"function": "nextApp"
+			}
+		],
+		"predeploy": "npm run build-public"
+	}
+}

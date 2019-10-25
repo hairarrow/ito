@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Message from "./Message";
 import ConversationStyles from "./Conversation.styles";
-import useScrollPosition from "../hooks/useScrollPosition";
+import useScrollPosition from "../../hooks/useScrollPosition";
 import useAnimation from "./Conversation.animation";
 
 const Conversation = () => {

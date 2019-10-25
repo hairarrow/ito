@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import ServicesStyles from "./Services.styles";
-import useScrollPosition from "../hooks/useScrollPosition";
+import useScrollPosition from "../../hooks/useScrollPosition";
 import { useAnimation } from "./Services.animation";
 
 const Services = () => {

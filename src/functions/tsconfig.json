@@ -1,0 +1,15 @@
+{
+	"compilerOptions": {
+		"lib": ["es6", "dom", "es2016"],
+		"module": "commonjs",
+		"noImplicitReturns": true,
+		"noUnusedLocals": true,
+		"outDir": "../dist/functions",
+		"sourceMap": true,
+		"skipLibCheck": true,
+		"strict": true,
+		"target": "es5"
+	},
+	"compileOnSave": true,
+	"include": ["src"]
+}

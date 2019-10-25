@@ -1,8 +1,7 @@
-import styled from "styled-components";
 import React, { useRef, useState, useEffect } from "react";
 import { useAnimation } from "./About.animation";
 import AboutStyles from "./About.styles";
-import useScrollPosition from "../hooks/useScrollPosition";
+import useScrollPosition from "../../hooks/useScrollPosition";
 
 const About = () => {
 	const containerRef = useRef(null);
