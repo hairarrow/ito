@@ -70,7 +70,7 @@ export function useAnimation(ref: any) {
 				"-=400"
 			)
 			.add({
-				targets: ".button",
+				targets: ".bt-1",
 				opacity: 1,
 				translateY: [24, 0],
 				scale: [0.5, 1]

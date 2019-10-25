@@ -11,6 +11,7 @@ const Styled = styled.section`
 	color: var(--bg-color);
 	backdrop-filter: blur(40px) brightness(33%) saturate(120%);
 	opacity: 0;
+	will-change: opacity;
 
 	&:not(.msg--open) {
 		pointer-events: none;
@@ -30,6 +31,7 @@ const Styled = styled.section`
 		font-size: 28px;
 		margin-bottom: 16px;
 		opacity: 0;
+		will-change: transform, opacity;
 
 		@media (prefers-color-scheme: dark) {
 			color: var(--fg-color);
@@ -47,6 +49,7 @@ const Styled = styled.section`
 		height: 44px;
 		cursor: pointer;
 		opacity: 0;
+		will-change: opacity, transform;
 
 		&:hover {
 			opacity: 1;
@@ -61,6 +64,7 @@ const Styled = styled.section`
 		padding: 16px;
 		border-radius: 20px;
 		opacity: 0;
+		will-change: opacity, transform;
 
 		@media (prefers-color-scheme: dark) {
 			background: rgba(255, 255, 255, 0.1);

@@ -4,7 +4,8 @@ const theme = {
 	colors: {
 		bg: "#fff",
 		fg: "rgba(0, 0, 0, 0.8)",
-		accent: "rgba(0, 98, 255, 1)"
+		accent: `rgba(0, 98, 255, 1)`,
+		alt: `rgba(255, 12, 253, 1)`
 	},
 	breakpoints: {
 		sm: {

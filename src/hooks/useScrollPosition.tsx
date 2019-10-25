@@ -12,15 +12,12 @@ const useScrollPosition = (
 ): [number, () => void] | [] => {
 	const [distanceFromTop, setDistanceFromTop] = useState<number>(undefined);
 	const wdw = useRef(typeof window !== "undefined" ? window : null);
-
 	const handleScroll = () => {
 		if (el.current)
 			setDistanceFromTop(el.current.getBoundingClientRect().top);
 	};
-
 	const onScroll = throttle(handleScroll, 200);
 	const scroll = useCallback(onScroll, [el]);
-
 	const onDestroy = () => {
 		wdw.current.removeEventListener("scroll", scroll);
 	};

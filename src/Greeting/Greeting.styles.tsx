@@ -28,6 +28,7 @@ const StyledGreeting = styled.article`
 		overflow: hidden;
 		background: var(--accent);
 		opacity: 0;
+		will-change: opacity, transform;
 		transform-origin: bottom left;
 
 		& + .greeting {
@@ -51,6 +52,7 @@ const StyledGreeting = styled.article`
 				display: inline-block;
 				line-height: 1;
 				opacity: 0;
+				will-change: opacity, transform;
 			}
 		}
 
@@ -58,6 +60,7 @@ const StyledGreeting = styled.article`
 			display: inline-block;
 			padding-left: 8px;
 			opacity: 0;
+			will-change: opacity, transform;
 		}
 	}
 
@@ -70,6 +73,7 @@ const StyledGreeting = styled.article`
 		line-height: 48px;
 		font-weight: 300;
 		opacity: 0;
+		will-change: opacity, transform;
 		transform-origin: bottom left;
 
 		&:not(&--sub) {
@@ -90,6 +94,7 @@ const StyledGreeting = styled.article`
 		background: rgba(0, 0, 0, 0.03);
 		border-radius: 40px;
 		opacity: 0;
+		will-change: opacity, transform;
 
 		@media (${(props) => props.theme.breakpoints.sm.up}) {
 			padding: 40px 40px 56px;
@@ -126,6 +131,7 @@ const StyledGreeting = styled.article`
 			background: rgba(255, 255, 255, 1);
 			border-radius: 20px;
 			opacity: 0;
+			will-change: opacity, transform;
 			box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.08),
 				0 0 0 1px rgba(0, 0, 0, 0.04);
 
@@ -287,37 +293,9 @@ const StyledGreeting = styled.article`
 		}
 	}
 
-	.button-container {
-		/* padding-left: 16px; */
-	}
-
-	.button {
-		border: none;
-		font-size: 16px;
-		color: var(--bg-color);
-		background: var(--fg-color);
-		font-weight: 700;
-		height: 44px;
-		padding-left: 16px;
-		padding-right: 16px;
-		margin-top: 24px;
-		border-radius: 12px;
-		cursor: pointer;
-		transition: color 400ms cubic-bezier(0.22, 0.61, 0.36, 1),
-			background 400ms cubic-bezier(0.22, 0.61, 0.36, 1),
-			box-shadow 400ms cubic-bezier(0.22, 0.61, 0.36, 1);
+	.bt-1 {
 		opacity: 0;
-
-		&:hover {
-			background: var(--bg-color);
-			color: var(--fg-color);
-			box-shadow: 0 0 0 2px var(--fg-color),
-				inset 0 0 0 2px var(--bg-color), inset 0 0 0 4px var(--fg-color);
-		}
-
-		&:focus {
-			outline: 0;
-		}
+		will-change: opacity, transform;
 	}
 `;
 

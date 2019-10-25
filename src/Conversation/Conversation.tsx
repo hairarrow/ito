@@ -13,7 +13,9 @@ const Conversation = () => {
 
 	useEffect(() => {
 		if (scrollPosition)
-			setIsPlaying(scrollPosition <= window.innerHeight / 2);
+			setIsPlaying(
+				window.innerHeight - scrollPosition >= window.innerHeight / 4
+			);
 	}, [scrollPosition]);
 
 	useEffect(() => {

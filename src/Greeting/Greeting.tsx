@@ -4,6 +4,7 @@ import { useAnimation } from "./Greeting.animation";
 import convertToLetters from "../convertToLetters";
 import FEATURED_WORK from "./FEATURED_WORK";
 import { ContactContext } from "../Contact/Contact.context";
+import Button from "../Button";
 
 const Greeting = () => {
 	const { dispatch } = useContext(ContactContext);
@@ -55,9 +56,9 @@ const Greeting = () => {
 				</p>
 
 				<span className="button-container">
-					<button className="button" onClick={toggleMsg}>
+					<Button className="bt-1" onClick={toggleMsg}>
 						Say Hello
-					</button>
+					</Button>
 				</span>
 			</section>
 

@@ -5,7 +5,7 @@ const AboutStyles = styled.section`
 	width: 100%;
 	min-height: 50vh;
 	margin-top: 64px;
-	padding: 100px 40px;
+	padding: 100px 8px;
 	overflow: hidden;
 
 	.fake-container {
@@ -14,12 +14,13 @@ const AboutStyles = styled.section`
 		left: -100px;
 		right: -100px;
 		bottom: 80px;
-		background: rgba(244, 244, 244, 05);
+		background: var(--gradient);
 		transform-origin: top center;
 		transform: skewY(2deg);
 
 		@media (prefers-color-scheme: dark) {
 			background: rgba(255, 255, 255, 0.05);
+			background: var(--gradient);
 		}
 	}
 
@@ -43,6 +44,8 @@ const AboutStyles = styled.section`
 		}
 	}
 
+	--gradient: linear-gradient(to bottom right, var(--accent), var(--pink));
+
 	.content-title {
 		display: inline-block;
 		font-weight: 800;
@@ -50,11 +53,7 @@ const AboutStyles = styled.section`
 		line-height: 64px;
 		margin-bottom: 16px;
 		margin: 0;
-		background: linear-gradient(
-			to bottom right,
-			var(--accent),
-			rgba(255, 12, 253, 1)
-		);
+		background: var(--gradient);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 	}
@@ -65,14 +64,21 @@ const AboutStyles = styled.section`
 		max-width: 600px;
 		width: 100%;
 		padding: 24px;
-		background: var(--bg-color);
+		padding-bottom: 48px;
+		background: rgba(255, 255, 255, 0.8);
+		backdrop-filter: blur(20px) brightness(220%);
 		border-radius: 40px;
 		box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.08),
 			0 0 0 1px rgba(0, 0, 0, 0.04);
 		opacity: 0;
+		will-change: transform, opacity;
 
 		@media (${(props) => props.theme.breakpoints.sm.up}) {
 			padding: 64px;
+		}
+
+		@media (prefers-color-scheme: dark) {
+			background: rgba(0, 0, 0, 0.9);
 		}
 	}
 
@@ -84,6 +90,18 @@ const AboutStyles = styled.section`
 
 		& + .content {
 			margin-top: 24px;
+			position: relative;
+			padding-bottom: 34px;
+
+			&:after {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100px;
+				height: 10px;
+				background: var(--gradient);
+			}
 		}
 	}
 `;

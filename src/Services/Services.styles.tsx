@@ -5,6 +5,7 @@ const ServicesStyles = styled.section`
 	--container-width: 1200px;
 	max-width: var(--container-width);
 	margin: 60px auto;
+	padding: 8px;
 	padding-bottom: 60px;
 
 	.services-title {
@@ -23,6 +24,7 @@ const ServicesStyles = styled.section`
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 		opacity: 0;
+		will-change: opacity, transform;
 
 		@media (${(props) => props.theme.breakpoints.sm.up}) {
 			font-size: 68px;
@@ -50,6 +52,7 @@ const ServicesStyles = styled.section`
 		box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.08),
 			0 0 0 1px rgba(0, 0, 0, 0.04);
 		opacity: 0;
+		will-change: opacity, transform;
 
 		@media (prefers-color-scheme: dark) {
 			background: rgba(255, 255, 255, 0.05);
