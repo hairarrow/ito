@@ -12,10 +12,14 @@ import createMessage from "./createMessage";
 import fb from "../../fb";
 
 const Contact = () => {
-	const defaultState = {
+	const defaultFields = {
 		msg: "",
 		fromEmail: "",
 		subject: ""
+	};
+	const defaultValid = {
+		email: false,
+		message: false
 	};
 	const containerRef = useRef(null);
 	const formRef = useRef(null);
@@ -23,11 +27,9 @@ const Contact = () => {
 		state: { showMessage },
 		dispatch
 	} = useContext(ContactContext);
-	const [fields, setFields] = useState(defaultState);
-	const [valid, setValid] = useState({
-		email: false,
-		message: false
-	});
+	const [fields, setFields] = useState(defaultFields);
+	const [valid, setValid] = useState(defaultValid);
+	const [loading, setLoading] = useState(false);
 
 	useAnimation(containerRef, showMessage);
 
@@ -37,12 +39,17 @@ const Contact = () => {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
+		setLoading(true);
+
 		if (Object.keys(valid).every((k) => valid[k])) {
 			fb.analytics().logEvent<string>("send_message");
 			await createMessage(fields);
-			setFields(defaultState);
+			setFields(defaultFields);
+			setValid(defaultValid);
 			toggle();
 		}
+
+		setLoading(false);
 	};
 
 	const handleChangeSubject = (e: ChangeEvent<HTMLInputElement>) => {
@@ -100,7 +107,7 @@ const Contact = () => {
 							Object.keys(valid).every((key) => valid[key])
 								? "send-container--valid"
 								: ""
-						}`}
+						} ${loading ? "send-container--loading" : ""}`}
 					>
 						<span className="send-label">Send</span>
 						<input type="submit" value="Send" />

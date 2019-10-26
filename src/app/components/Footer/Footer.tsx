@@ -5,6 +5,7 @@ import anime from "animejs";
 import useScrollPosition from "../../hooks/useScrollPosition";
 import Button from "../Button";
 import { ContactContext } from "../Contact/Contact.context";
+import fb from "../../fb";
 
 const Footer = () => {
 	const { dispatch } = useContext(ContactContext);
@@ -40,12 +41,16 @@ const Footer = () => {
 						translateY: ["100%", 0],
 						easing: "easeOutQuint"
 					},
-					"-=400"
+					"-=200"
 				);
 			setHasPlayed(true);
 			cleanupScroll();
 		}
 	}, [containerRef, shouldPlay, hasPlayed]);
+
+	useEffect(() => {
+		if (hasPlayed) fb.analytics().logEvent<string>("reached_bottom");
+	}, [hasPlayed]);
 
 	return (
 		<FooterStyles ref={containerRef}>

@@ -135,9 +135,12 @@ const Styled = styled.section`
 		border-radius: 38px;
 		font-size: 0;
 		transition: transform 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+		will-change: transform;
 	}
 
 	.send-container:not(.send-container--valid) {
+		cursor: pointer;
+
 		.send-label {
 			transform: translateX(28px);
 			opacity: 0;
@@ -148,19 +151,26 @@ const Styled = styled.section`
 		}
 	}
 
+	.send-container--loading {
+		opacity: 0.2;
+	}
+
 	.send-label {
 		color: var(--accent);
-		font-weight: 500;
+		font-weight: 700;
 		transition: inherit;
+		opacity: 1;
 		transition: opacity 0.6s cubic-bezier(0.075, 0.82, 0.165, 1),
 			transform 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+		will-change: transform;
 	}
-	will-change: transform;
 
 	.send-container {
 		display: flex;
 		align-items: center;
 		justify-content: flex-end;
+		transition: opacity 300ms ease-out;
+		will-change: opacity;
 
 		&--valid {
 			input[type="submit"] {

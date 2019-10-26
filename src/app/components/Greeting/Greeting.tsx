@@ -101,10 +101,6 @@ const Greeting = () => {
 										</a>
 									</div>
 
-									<h2 className="featured-item-header-title">
-										{title}
-									</h2>
-
 									<p className="featured-item-header-tags">
 										{[...tags].map((tag) => (
 											<span
@@ -115,6 +111,10 @@ const Greeting = () => {
 											</span>
 										))}
 									</p>
+
+									<h2 className="featured-item-header-title">
+										{title}
+									</h2>
 								</header>
 
 								<p className="featured-item-description">

@@ -181,6 +181,10 @@ const StyledGreeting = styled.article`
 				.featured-item-header-top-row {
 					opacity: 1;
 					border-bottom: 4px solid rgba(0, 0, 0, 0.1);
+
+					@media (prefers-color-scheme: dark) {
+						border-bottom: 4px solid rgba(255, 255, 255, 0.3);
+					}
 				}
 
 				.featured-item-link {
@@ -211,7 +215,7 @@ const StyledGreeting = styled.article`
 					transition: all 240ms cubic-bezier(0.22, 0.61, 0.36, 1);
 
 					@media (prefers-color-scheme: dark) {
-						border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+						border-bottom: 4px solid rgba(255, 255, 255, 0.1);
 					}
 				}
 
@@ -223,39 +227,34 @@ const StyledGreeting = styled.article`
 				}
 
 				&-title {
+					margin-top: 0;
+					margin-bottom: 16px;
 					font-size: 24px;
 					font-weight: 800;
 					line-height: 1.4;
-					margin-bottom: 4px;
 				}
 
 				&-tags {
-					margin-bottom: 8px;
+					margin-bottom: 4px;
 				}
 
 				&-tag {
 					display: inline-block;
 					margin-right: 8px;
-					margin-bottom: 8px;
 					font-size: 12px;
 					font-weight: 800;
 					text-transform: uppercase;
-					background: var(--fg-color);
-					color: var(--bg-color);
-					padding: 2px 4px;
+					opacity: 0.5;
 					border-radius: 4px;
 				}
 			}
 
 			&-description {
-				display: -webkit-box;
-				-webkit-line-clamp: 2;
-				-webkit-box-orient: vertical;
 				margin: 0;
-				font-size: 16px;
+				font-size: 14px;
 				line-height: 28px;
-				font-weight: 500;
-				overflow: hidden;
+				font-weight: 600;
+				opacity: 0.8;
 			}
 		}
 
