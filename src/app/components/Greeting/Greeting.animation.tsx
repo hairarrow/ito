@@ -11,15 +11,15 @@ const greetingIn = () => ({
 const greetingLetterIn = () => ({
 	opacity: 1,
 	translateY: [300, 0],
-	duration: 800,
-	delay: anime.stagger(30)
+	duration: 600,
+	delay: anime.stagger(20)
 });
 
 export function useAnimation(ref: any) {
 	useEffect(() => {
 		if (!ref) return;
 		anime
-			.timeline({ loop: false, easing: "spring(1, 80, 30, 0)" })
+			.timeline({ easing: "spring(1, 80, 30, 0)" })
 			.add({
 				targets: ".greeting--hello",
 				...greetingIn()
@@ -35,7 +35,6 @@ export function useAnimation(ref: any) {
 				{
 					targets: ".greeting-wave",
 					translateY: [100, 0],
-					duration: 600,
 					rotateZ: [80, 0],
 					opacity: 1,
 					easing: "spring(2, 80, 12, 0)"
@@ -47,28 +46,23 @@ export function useAnimation(ref: any) {
 					targets: ".greeting--name",
 					...greetingIn()
 				},
-				"-=2400"
+				"-=1800"
 			)
 			.add(
 				{
 					targets: ".greeting--name .greeting-text .letter",
 					...greetingLetterIn()
 				},
-				"-=2400"
+				"-=1800"
 			)
 			.add(
 				{
-					targets: [".lead", ".featured", ".featured-item"],
+					targets: [".lead", ".featured", ".featured-item", ".bt-1"],
 					opacity: 1,
-					translateY: [24, 0],
-					easing: "easeOutQuad",
-					delay: anime.stagger(100)
+					translateY: [40, 0],
+					delay: anime.stagger(40)
 				},
-				"-=800"
-			)
-			.add({
-				targets: ".bt-1",
-				opacity: 1
-			});
+				"-=200"
+			);
 	}, [ref]);
 }

@@ -6,7 +6,7 @@ export function useAnimation(ref: any) {
 		if (!ref) return;
 		anime
 			.timeline({
-				easing: "spring(1, 80, 30, 0)"
+				easing: "spring(1, 80, 30, 1)"
 			})
 			.add({
 				targets: ".fake-container",
@@ -15,7 +15,7 @@ export function useAnimation(ref: any) {
 			.add(
 				{
 					targets: ".ball",
-					translateX: "-90%",
+					translateX: "-100%",
 					easing: "easeInQuad",
 					duration: 2000
 				},
@@ -30,5 +30,5 @@ export function useAnimation(ref: any) {
 				},
 				0
 			);
-	});
+	}, [ref]);
 }

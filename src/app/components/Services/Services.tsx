@@ -1,31 +1,9 @@
-import React, { useRef, useState, useEffect } from "react";
+import React from "react";
 import ServicesStyles from "./Services.styles";
-import useScrollPosition from "../../hooks/useScrollPosition";
-import { useAnimation } from "./Services.animation";
 
 const Services = () => {
-	const containerRef = useRef<HTMLElement>(null);
-	const [hasPlayed, setHasPlayed] = useState(false);
-	const [isPlaying, setIsPlaying] = useState(false);
-	const [scrollPosition, cleanupScroll] = useScrollPosition(containerRef);
-	useAnimation(hasPlayed && containerRef);
-
-	useEffect(() => {
-		if (scrollPosition)
-			setIsPlaying(
-				window.innerHeight - scrollPosition >= window.innerHeight / 4
-			);
-	}, [scrollPosition]);
-
-	useEffect(() => {
-		if (isPlaying && !hasPlayed) {
-			setHasPlayed(true);
-			cleanupScroll();
-		}
-	}, [isPlaying]);
-
 	return (
-		<ServicesStyles ref={containerRef}>
+		<ServicesStyles>
 			<span className="services-container">
 				{SERVICES.map(({ title, description, tags }) => (
 					<article key={title} className="service">

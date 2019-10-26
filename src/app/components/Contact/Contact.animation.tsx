@@ -14,8 +14,8 @@ export default function useAnimation(ref: any, open = false) {
 		}
 		anime
 			.timeline({
-				easing: "easeOutCirc",
-				direction
+				direction,
+				easing: "easeOutCirc"
 			})
 			.add({
 				targets: ".msg",
@@ -25,18 +25,18 @@ export default function useAnimation(ref: any, open = false) {
 			.add({
 				targets: [".title", ".form"],
 				translateY: [100, 0],
-				duration: 200,
+				duration: 180,
 				delay: anime.stagger(100),
 				opacity
 			})
 			.add(
 				{
 					targets: ".cancel",
-					duration: 140,
+					duration: open ? 500 : 100,
 					opacity,
 					translateY: [-100, 0]
 				},
-				"-=160"
+				"-=180"
 			);
 	}, [ref, open]);
 }

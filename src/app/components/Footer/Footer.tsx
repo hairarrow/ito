@@ -30,17 +30,17 @@ const Footer = () => {
 					opacity: 1,
 					scale: [0.2, 1],
 					translateY: [200, 0],
-					easing: "spring(1, 80, 30, 0)",
+					easing: "spring(1, 80, 30, 8)",
 					delay: anime.stagger(1000)
 				})
 				.add(
 					{
 						targets: ".bt-2",
 						opacity: 1,
-						translateY: [48, 0],
-						scale: [0.5, 1]
+						translateY: ["100%", 0],
+						easing: "easeOutQuint"
 					},
-					2000
+					"-=400"
 				);
 			setHasPlayed(true);
 			cleanupScroll();
