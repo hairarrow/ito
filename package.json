@@ -1,18 +1,24 @@
 {
+	"proxy": "http://localhost:5001",
 	"name": "ito",
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"dev": "next src/app",
+		"dev": "next \"src/app\"",
 		"build": "next build \"src/app\"",
-		"preserve": "npm run build-public && npm run build-functions && npm run build && npm run copy-deps && npm run install-deps",
+		"postbuild": "cpx \"dist/functions/next/static/*\" \"dist/functions/static\"",
+		"preserve": "yarn export && yarn build-functions && yarn copy-deps && yarn install-deps",
+		"preexport": "yarn clean && yarn build",
+		"export": "next export \"src/app\" -o \"dist/out\"",
 		"serve": "cross-env NODE_ENV=production firebase serve",
-		"copy-deps": "cpx \"*{package.json,package-lock.json,yarn.lock}\" \"dist/functions\" -C",
+		"copy-deps": "cpx \"*{package.json,package-lock.json,yarn.lock}\" \"dist/functions\"",
 		"install-deps": "cd \"dist/functions\" && npm i",
-		"build-functions": "tsc --project functions",
-		"build-public": "cpx \"public/**/*.*\" \"dist/public\" -C",
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"build-functions": "tsc --project src/functions",
+		"prebuild-public": "yarn export",
+		"build-public": "cpx \"src/app/public/**/*.*\" \"dist/out/\"",
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"clean": "rimraf \"dist\""
 	},
 	"keywords": [],
 	"author": "",
@@ -30,15 +36,18 @@
 	},
 	"devDependencies": {
 		"@types/animejs": "^3.1.0",
+		"@types/cors": "^2.8.6",
 		"@types/lodash": "^4.14.144",
 		"@types/next": "^8.0.6",
 		"@types/node": "^12.11.5",
 		"@types/react": "^16.9.9",
 		"@types/styled-components": "^4.1.19",
 		"babel-plugin-styled-components": "^1.10.6",
+		"cors": "^2.8.5",
 		"cpx": "^1.5.0",
 		"cross-env": "^6.0.3",
 		"firebase-tools": "^7.6.1",
+		"rimraf": "^3.0.0",
 		"typescript": "^3.6.4"
 	}
 }

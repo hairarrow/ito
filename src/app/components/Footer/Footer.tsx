@@ -17,7 +17,6 @@ const Footer = () => {
 		dispatch({ type: "UpdateShowMessage", value: true });
 
 	useEffect(() => {
-		console.log(window.innerHeight - scrollPosition);
 		if (scrollPosition)
 			setShouldPlay(window.innerHeight - scrollPosition >= 100);
 	}, [scrollPosition]);

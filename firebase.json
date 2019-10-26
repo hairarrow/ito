@@ -6,14 +6,15 @@
 			"npm run build",
 			"npm run copy-deps",
 			"npm run install-deps"
-		]
+		],
+		"rewrites": [{ "source": "**", "function": "nextApp" }]
 	},
 	"hosting": {
-		"public": "dist/public",
+		"public": "dist/out",
 		"rewrites": [
 			{
-				"source": "**/**",
-				"function": "nextApp"
+				"source": "**",
+				"destination": "/index.html"
 			}
 		],
 		"predeploy": "npm run build-public"

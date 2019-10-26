@@ -4,11 +4,15 @@
 		"module": "commonjs",
 		"noImplicitReturns": true,
 		"noUnusedLocals": true,
-		"outDir": "../dist/functions",
+		"outDir": "../../dist/functions",
 		"sourceMap": true,
 		"skipLibCheck": true,
 		"strict": true,
-		"target": "es5"
+		"target": "es2017",
+		"baseUrl": "./",
+		"esModuleInterop": true,
+		"resolveJsonModule": true,
+		"isolatedModules": true
 	},
 	"compileOnSave": true,
 	"include": ["src"]

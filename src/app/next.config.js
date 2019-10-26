@@ -1,3 +1,7 @@
 module.exports = {
-	distDir: "../../dist/functions/next"
+	exportPathMap: function() {
+		return {
+			"/": { page: "/" }
+		};
+	}
 };
