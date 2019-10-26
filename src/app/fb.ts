@@ -1,5 +1,6 @@
 import firebase from "firebase/app";
-import "firebase/functions";
+import "firebase/firestore";
+import "firebase/analytics";
 
 const firebaseConfig = {
 	apiKey: "AIzaSyAfiKQagoDAIinuhnDkymw3JuZXqip4Wrk",
@@ -14,7 +15,7 @@ const firebaseConfig = {
 
 !firebase.apps.length && firebase.initializeApp(firebaseConfig);
 
-if (process.env.NODE_ENV === "development")
-	firebase.functions().useFunctionsEmulator("http://localhost:5000");
+// if (process.env.NODE_ENV === "development")
+// 	firebase.functions().useFunctionsEmulator("http://localhost:5000");
 
 export default firebase;

@@ -1,35 +1,88 @@
-import React, { useContext, useState, useRef } from "react";
+import React, {
+	useContext,
+	useState,
+	useRef,
+	useEffect,
+	ChangeEvent
+} from "react";
 import { ContactContext } from "./Contact.context";
 import StyledContact from "./Contact.styles";
 import useAnimation from "./Contact.animation";
+import createMessage from "./createMessage";
+import fb from "../../fb";
 
 const Contact = () => {
+	const defaultState = {
+		msg: "",
+		fromEmail: "",
+		subject: ""
+	};
 	const containerRef = useRef(null);
+	const formRef = useRef(null);
 	const {
 		state: { showMessage },
 		dispatch
 	} = useContext(ContactContext);
+	const [fields, setFields] = useState(defaultState);
 	const [valid, setValid] = useState({
 		email: false,
 		message: false
 	});
+
 	useAnimation(containerRef, showMessage);
 
-	const toggle = () => dispatch({ type: "UpdateShowMessage", value: false });
+	const toggle = () => {
+		dispatch({ type: "UpdateShowMessage", value: false });
+	};
 
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
-		toggle();
-	};
-	const handleChangeEmail = (e) => {
-		const { valid: email } = e.target.validity;
-		setValid({ ...valid, email });
+		if (Object.keys(valid).every((k) => valid[k])) {
+			fb.analytics().logEvent<string>("send_message");
+			await createMessage(fields);
+			setFields(defaultState);
+			toggle();
+		}
 	};
 
-	const handleChangeMessage = (e) => {
-		const { valid: message } = e.target.validity;
-		setValid({ ...valid, message });
+	const handleChangeSubject = (e: ChangeEvent<HTMLInputElement>) => {
+		setFields({ ...fields, subject: e.currentTarget.value });
 	};
+
+	const handleChangeEmail = (e: ChangeEvent<HTMLInputElement>) => {
+		const {
+			validity: { valid: email },
+			value: fromEmail
+		} = e.currentTarget;
+		setValid({ ...valid, email });
+		setFields({ ...fields, fromEmail });
+	};
+
+	const handleChangeMessage = (e: ChangeEvent<HTMLTextAreaElement>) => {
+		const {
+			validity: { valid: message },
+			value: msg
+		} = e.currentTarget;
+		setValid({ ...valid, message });
+		setFields({ ...fields, msg });
+	};
+
+	const handleClick = (e: any) => {
+		if (formRef.current.contains(e.target)) {
+			console.log("inside");
+		} else toggle();
+	};
+
+	useEffect(() => {
+		if (showMessage) {
+			document.addEventListener("mousedown", handleClick);
+			fb.analytics().logEvent<string>("open_contact_modal");
+		} else document.removeEventListener("mousedown", handleClick);
+
+		return () => {
+			document.removeEventListener("mousedown", handleClick);
+		};
+	}, [showMessage]);
 
 	return (
 		<StyledContact
@@ -41,7 +94,7 @@ const Contact = () => {
 					Cancel
 				</button>
 				<h1 className="title">Say hello</h1>
-				<form className="form" onSubmit={handleSubmit}>
+				<form ref={formRef} className="form" onSubmit={handleSubmit}>
 					<label
 						className={`send-container ${
 							Object.keys(valid).every((key) => valid[key])
@@ -62,26 +115,34 @@ const Contact = () => {
 							disabled
 						/>
 					</label>{" "}
-					<label htmlFor="msg_email">
+					<label htmlFor="msg_email" className="required">
 						<span>From:</span>
 						<input
+							value={fields.fromEmail}
 							id="msg_email"
 							type="email"
 							name="email"
+							placeholder="ryan@email.com"
 							required
 							onChange={handleChangeEmail}
 						/>
 					</label>
 					<label htmlFor="msg_subject">
 						<span>Subject:</span>
-						<input id="msg_subject" type="text" name="subject" />
+						<input
+							id="msg_subject"
+							type="text"
+							name="subject"
+							value={fields.subject}
+							onChange={handleChangeSubject}
+						/>
 					</label>
 					<textarea
 						onChange={handleChangeMessage}
 						id="msg_body"
 						name="body"
 						placeholder="Message"
-						required
+						value={fields.msg}
 					/>
 				</form>
 			</section>

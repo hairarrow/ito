@@ -5,16 +5,13 @@ const greetingIn = () => ({
 	opacity: 1,
 	scale: [0.2, 1],
 	translateY: [200, 0],
-	duration: 800,
-	easing: "spring(1, 80, 30, 0)",
-	delay: 680
+	duration: 800
 });
 
 const greetingLetterIn = () => ({
 	opacity: 1,
 	translateY: [300, 0],
 	duration: 800,
-	easing: "spring(1, 80, 30, 0)",
 	delay: anime.stagger(30)
 });
 
@@ -22,7 +19,7 @@ export function useAnimation(ref: any) {
 	useEffect(() => {
 		if (!ref) return;
 		anime
-			.timeline({ loop: false })
+			.timeline({ loop: false, easing: "spring(1, 80, 30, 0)" })
 			.add({
 				targets: ".greeting--hello",
 				...greetingIn()
@@ -32,7 +29,7 @@ export function useAnimation(ref: any) {
 					targets: ".greeting--hello .greeting-text .letter",
 					...greetingLetterIn()
 				},
-				"-=1200"
+				"-=1000"
 			)
 			.add(
 				{
@@ -57,7 +54,7 @@ export function useAnimation(ref: any) {
 					targets: ".greeting--name .greeting-text .letter",
 					...greetingLetterIn()
 				},
-				"-=1800"
+				"-=2400"
 			)
 			.add(
 				{
@@ -67,13 +64,11 @@ export function useAnimation(ref: any) {
 					easing: "easeOutQuad",
 					delay: anime.stagger(100)
 				},
-				"-=400"
+				"-=800"
 			)
 			.add({
 				targets: ".bt-1",
-				opacity: 1,
-				translateY: [24, 0],
-				scale: [0.5, 1]
+				opacity: 1
 			});
 	}, [ref]);
 }

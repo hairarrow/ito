@@ -5,6 +5,6 @@ const cors = CORS({ origin: true });
 
 export const sayHello = functions.https.onRequest((req, res) =>
 	cors(req, res, () => {
-		res.send({ data: { success: "ok" } });
+		res.send({ data: { success: "ok", body: req.body } });
 	})
 );

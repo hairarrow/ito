@@ -25,6 +25,8 @@ const Styled = styled.section`
 		max-width: 640px;
 		padding: 64px 8px;
 		margin: auto auto;
+		position: relative;
+		z-index: 1;
 	}
 
 	.title {
@@ -64,6 +66,7 @@ const Styled = styled.section`
 		padding: 16px;
 		border-radius: 20px;
 		opacity: 0;
+		transform: translateY(100px);
 		will-change: opacity, transform;
 
 		@media (prefers-color-scheme: dark) {
@@ -81,6 +84,12 @@ const Styled = styled.section`
 		@media (prefers-color-scheme: dark) {
 			border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 		}
+
+		&.required span:after {
+			content: " *";
+			color: #f00;
+		}
+
 		span {
 			margin-right: 8px;
 			opacity: 0.5;
@@ -91,6 +100,11 @@ const Styled = styled.section`
 
 			&:disabled {
 				opacity: 0.5;
+			}
+
+			&::placeholder {
+				color: var(--fg-color);
+				opacity: 0.2;
 			}
 		}
 	}

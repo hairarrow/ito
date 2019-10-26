@@ -1,5 +1,4 @@
 import { createContext, useReducer, PropsWithChildren } from "react";
-import firebase from "../../fb";
 
 type TState = typeof initialState;
 
@@ -26,12 +25,6 @@ function createContactContext() {
 		state: initialState,
 		dispatch: (_: TAction) => null
 	});
-
-	const addMessage = firebase.functions().httpsCallable("sayHello");
-
-	addMessage({ msg: "hello" })
-		.then((r) => console.log(r))
-		.catch((err) => console.log(err));
 
 	const Provider = (props: PropsWithChildren<any>) => {
 		const [state, dispatch] = useReducer(reducer, initialState);
