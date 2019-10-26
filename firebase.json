@@ -6,8 +6,7 @@
 			"npm run build",
 			"npm run copy-deps",
 			"npm run install-deps"
-		],
-		"rewrites": [{ "source": "**", "function": "nextApp" }]
+		]
 	},
 	"hosting": {
 		"public": "dist/out",
@@ -18,5 +17,9 @@
 			}
 		],
 		"predeploy": "npm run build-public"
+	},
+	"firestore": {
+		"rules": "firestore.rules",
+		"indexes": "firestore.indexes.json"
 	}
 }
