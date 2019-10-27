@@ -89,6 +89,7 @@ const StyledGreeting = styled.article`
 		&--sub {
 			font-weight: 500;
 			font-size: 14px;
+			line-height: 28px;
 			max-width: 90%;
 		}
 
