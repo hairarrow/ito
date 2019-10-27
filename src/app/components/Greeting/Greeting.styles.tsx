@@ -123,6 +123,7 @@ const StyledGreeting = styled.article`
 
 	.featured {
 		margin: 10vh auto;
+		width: 100%;
 		max-width: 1000px;
 		padding: 32px 24px 60px;
 		border-radius: 40px;
@@ -149,10 +150,13 @@ const StyledGreeting = styled.article`
 
 		&-container {
 			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
 			grid-gap: 24px;
 			grid-auto-rows: auto;
 			align-items: start;
+
+			@media (${(props) => props.theme.breakpoints.sm.up}) {
+				grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+			}
 		}
 
 		&-title {
