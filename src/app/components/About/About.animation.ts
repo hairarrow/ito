@@ -6,29 +6,30 @@ export function useAnimation(ref: any) {
 		if (!ref) return;
 		anime
 			.timeline({
-				easing: "spring(1, 80, 30, 1)"
+				easing: "easeOutQuad"
 			})
 			.add({
 				targets: ".fake-container",
-				skewY: ["2deg", "-2deg"]
+				duration: 1000,
+				skewY: ["3deg", "-3deg"]
 			})
 			.add(
 				{
 					targets: ".ball",
 					translateX: "-100%",
-					easing: "easeInQuad",
-					duration: 2000
+					duration: 2000,
+					easing: "easeInQuad"
 				},
-				0
+				"-=600"
 			)
 			.add(
 				{
 					targets: ".content-container",
 					scale: [0.8, 1],
-					translateY: [200, 0],
+					translateY: ["100%", "0%"],
 					opacity: 1
 				},
-				0
+				"-=1800"
 			);
 	}, [ref]);
 }

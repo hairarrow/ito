@@ -1,6 +1,8 @@
 import React from "react";
 import ServicesStyles from "./Services.styles";
 
+// Services animation located in Conversation
+
 const Services = () => {
 	return (
 		<ServicesStyles>
@@ -90,7 +92,7 @@ const SERVICES = [
 			"I've been building accessible, high-performing websites for over 9 years. Accessibility is incredibly important for me in everything I do. The purpose of the digital platforms I build for is to break barriers and help more people communicate effectively. It is unacceptable that millions of people around the world have to go through a web that makes them feel invisible. Accessible websites improve user experience, protect you from lawsuits, open new markets.",
 		tags: [
 			"A11Y",
-			"AATT (Automated Accessibility Testing Tool",
+			"AATT (Automated Accessibility Testing Tool)",
 			"Storybook Accessibility Report",
 			"Checklist",
 			"Code Linting for Accessibility Problems",

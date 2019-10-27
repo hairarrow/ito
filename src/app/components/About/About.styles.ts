@@ -16,7 +16,7 @@ const AboutStyles = styled.section`
 		bottom: 80px;
 		background: var(--gradient);
 		transform-origin: top center;
-		transform: skewY(2deg);
+		transform: skewY(3deg);
 
 		@media (prefers-color-scheme: dark) {
 			background: rgba(255, 255, 255, 0.05);
@@ -66,9 +66,9 @@ const AboutStyles = styled.section`
 		padding: 24px;
 		padding-bottom: 64px;
 		background: rgba(255, 255, 255, 0.8);
-		backdrop-filter: blur(20px) brightness(220%);
+		backdrop-filter: blur(20px) brightness(180%);
 		border-radius: 20px;
-		box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.08),
+		box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2),
 			0 0 0 1px rgba(0, 0, 0, 0.04);
 		opacity: 0;
 		will-change: transform, opacity;

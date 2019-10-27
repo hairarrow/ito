@@ -32,7 +32,6 @@ const MessageStyles = styled.article`
 	line-height: 48px;
 	border-radius: 24px;
 	background: var(--accent);
-	max-width: 90%;
 
 	@media (${(props) => props.theme.breakpoints.sm.up}) {
 		font-size: 24px;

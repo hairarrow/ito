@@ -39,10 +39,10 @@ const Footer = () => {
 					{
 						targets: ".bt-2",
 						opacity: 1,
-						translateY: ["100%", 0],
+						translateY: ["200%", 0],
 						easing: "easeOutQuint"
 					},
-					"-=200"
+					"-=640"
 				);
 			setHasPlayed(true);
 			cleanupScroll();

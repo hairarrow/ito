@@ -10,7 +10,9 @@ const FooterStyles = styled.footer`
 
 	.message {
 		padding: 8px 24px;
-		line-height: 40px;
+		line-height: 32px;
+		font-size: 18px;
+		font-weight: 500;
 		opacity: 0;
 		will-change: opacity, transform;
 

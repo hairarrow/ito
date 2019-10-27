@@ -28,10 +28,10 @@ export default function useAnimation(
 					"-=300"
 				)
 				.add({
-					targets: ".service-tags",
+					targets: ".service-tag",
 					translateY: ["100%", "0%"],
-					opacity: [0, 0.8],
-					delay: anime.stagger(100)
+					opacity: [0, 0.6],
+					delay: anime.stagger(20)
 				});
 	}, [ref, enabled]);
 }

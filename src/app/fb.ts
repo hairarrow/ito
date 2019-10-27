@@ -17,12 +17,5 @@ const firebaseConfig = {
 
 const db = firebase.firestore();
 
-// if (process.env.NODE_ENV === "development") {
-// 	db.settings({
-// 		host: "localhost:8080",
-// 		ssl: false
-// 	});
-// }
-
 export { db };
 export default firebase;

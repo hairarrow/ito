@@ -1,11 +1,21 @@
 import styled from "styled-components";
 
 const StyledGreeting = styled.article`
+	padding: 8px;
+
 	.container {
 		display: block;
-		max-width: 640px;
-		padding: 2rem;
+		max-width: 680px;
+		padding: 8px;
 		margin: auto auto;
+
+		@media (${(props) => props.theme.breakpoints.sm.up}) {
+			padding: 1rem;
+		}
+
+		@media (${(props) => props.theme.breakpoints.lg.up}) {
+			max-width: 800px;
+		}
 	}
 
 	.greeting-container {
@@ -69,31 +79,59 @@ const StyledGreeting = styled.article`
 		position: relative;
 		padding-left: 16px;
 		padding-right: 16px;
-		font-size: 24px;
+		font-size: 21px;
 		line-height: 48px;
-		font-weight: 300;
+		font-weight: 500;
 		opacity: 0;
 		will-change: opacity, transform;
 		transform-origin: bottom left;
 
-		&:not(&--sub) {
-			font-weight: 400;
+		&--sub {
+			font-weight: 500;
+			font-size: 14px;
+			max-width: 90%;
 		}
 
-		&--sub {
-			font-weight: 400;
-			font-size: 16px;
-			line-height: 36px;
+		@media (${(props) => props.theme.breakpoints.sm.up}) {
+			font-size: 28px;
+
+			&--sub {
+				font-size: 16px;
+				line-height: 36px;
+			}
+		}
+
+		@media (${(props) => props.theme.breakpoints.md.up}) {
+			font-size: 32px;
+
+			&--sub {
+				font-size: 18px;
+			}
+		}
+
+		@media (${(props) => props.theme.breakpoints.lg.up}) {
+			font-size: 42px;
+			line-height: 68px;
+
+			&--sub {
+				font-size: 18px;
+				line-height: 36px;
+			}
 		}
 	}
 
 	.featured {
 		margin: 10vh auto;
 		max-width: 1000px;
-		padding: 32px 24px 40px;
-		background: rgba(0, 0, 0, 0.03);
+		padding: 32px 24px 60px;
 		border-radius: 40px;
+		background: linear-gradient(
+			to bottom,
+			rgba(0, 0, 0, 0),
+			rgba(0, 0, 0, 0.02)
+		);
 		opacity: 0;
+		box-shadow: 0 8px 40px 4px rgba(0, 0, 0, 0.08);
 		will-change: opacity, transform;
 
 		@media (${(props) => props.theme.breakpoints.sm.up}) {
@@ -101,7 +139,11 @@ const StyledGreeting = styled.article`
 		}
 
 		@media (prefers-color-scheme: dark) {
-			background: rgba(255, 255, 255, 0.05);
+			background: linear-gradient(
+				to bottom,
+				rgba(255, 255, 255, 0.05),
+				rgba(255, 255, 255, 0.02)
+			);
 		}
 
 		&-container {
@@ -113,14 +155,20 @@ const StyledGreeting = styled.article`
 		}
 
 		&-title {
+			margin: 0;
 			margin-bottom: 16px;
 			font-size: 18px;
 			display: inline-block;
-			opacity: 0.8;
-
-			@media (prefers-color-scheme: dark) {
-				opacity: 0.6;
-			}
+			font-weight: 800;
+			font-size: 32px;
+			line-height: 64px;
+			background: linear-gradient(
+				to top left,
+				var(--accent),
+				var(--pink)
+			);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
 		}
 
 		&-item {
@@ -210,9 +258,16 @@ const StyledGreeting = styled.article`
 					align-items: center;
 					padding-bottom: 8px;
 					margin-bottom: 16px;
+					border: 0;
 					border-bottom: 4px solid rgba(0, 0, 0, 0.08);
 					opacity: 0.8;
 					transition: all 240ms cubic-bezier(0.22, 0.61, 0.36, 1);
+					border-image: linear-gradient(
+						to right,
+						var(--accent),
+						var(--pink)
+					);
+					border-image-slice: 1;
 
 					@media (prefers-color-scheme: dark) {
 						border-bottom: 4px solid rgba(255, 255, 255, 0.1);

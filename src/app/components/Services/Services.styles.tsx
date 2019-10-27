@@ -3,10 +3,11 @@ import styled from "styled-components";
 const ServicesStyles = styled.section`
 	--pink: rgba(255, 12, 253, 1);
 	--container-width: 1200px;
-	max-width: var(--container-width);
 	margin: 60px auto;
 	padding: 8px;
 	padding-bottom: 60px;
+	overflow: hidden;
+	max-width: var(--container-width);
 
 	.services-title {
 		display: inline-block;
@@ -138,21 +139,20 @@ const ServicesStyles = styled.section`
 		.service-tags {
 			padding: 0;
 			margin-top: auto;
-			flex-wrap: wrap;
 			line-height: 24px;
-
-			@media (prefers-color-scheme: light) {
-				background: var(--gradient);
-				-webkit-text-fill-color: transparent;
-				-webkit-background-clip: text;
-			}
 		}
 
 		.service-tag {
-			display: inline;
+			display: inline-block;
 			font-size: 12px;
 			font-weight: 600;
-			margin-right: 16px;
+			margin-right: 8px;
+
+			&:not(:last-child):after {
+				content: "•";
+				padding-left: 8px;
+				opacity: 0.2;
+			}
 		}
 	}
 `;

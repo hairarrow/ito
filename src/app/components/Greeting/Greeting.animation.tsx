@@ -59,8 +59,8 @@ export function useAnimation(ref: any) {
 				{
 					targets: [".lead", ".featured", ".featured-item", ".bt-1"],
 					opacity: 1,
-					translateY: [40, 0],
-					delay: anime.stagger(40)
+					translateY: ["50%", "0%"],
+					delay: anime.stagger(20)
 				},
 				"-=200"
 			);
