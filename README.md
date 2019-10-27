@@ -1,5 +1,7 @@
 # Personal Website
 
-## `npm run dev`
+## `yarn dev`
 
-## `npm run build`
+## `yarn export`
+
+### `yarn deploy`
