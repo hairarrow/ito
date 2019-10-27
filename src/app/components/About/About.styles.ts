@@ -66,7 +66,6 @@ const AboutStyles = styled.section`
 		padding: 24px;
 		padding-bottom: 64px;
 		background: rgba(255, 255, 255, 0.8);
-		backdrop-filter: blur(20px) brightness(180%);
 		border-radius: 20px;
 		box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2),
 			0 0 0 1px rgba(0, 0, 0, 0.04);
@@ -78,7 +77,7 @@ const AboutStyles = styled.section`
 		}
 
 		@media (prefers-color-scheme: dark) {
-			background: rgba(0, 0, 0, 0.9);
+			background: rgba(0, 0, 0, 0.8);
 		}
 	}
 
