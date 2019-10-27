@@ -38,7 +38,6 @@ const StyledGreeting = styled.article`
 		overflow: hidden;
 		background: var(--accent);
 		opacity: 0;
-		will-change: opacity, transform;
 		transform-origin: bottom left;
 
 		& + .greeting {
@@ -62,7 +61,6 @@ const StyledGreeting = styled.article`
 				display: inline-block;
 				line-height: 1;
 				opacity: 0;
-				will-change: opacity, transform;
 			}
 		}
 
@@ -70,7 +68,6 @@ const StyledGreeting = styled.article`
 			display: inline-block;
 			padding-left: 8px;
 			opacity: 0;
-			will-change: opacity, transform;
 		}
 	}
 
@@ -83,7 +80,6 @@ const StyledGreeting = styled.article`
 		line-height: 48px;
 		font-weight: 500;
 		opacity: 0;
-		will-change: opacity, transform;
 		transform-origin: bottom left;
 
 		&--sub {
@@ -134,7 +130,6 @@ const StyledGreeting = styled.article`
 		);
 		opacity: 0;
 		box-shadow: 0 8px 40px 4px rgba(0, 0, 0, 0.08);
-		will-change: opacity, transform;
 
 		@media (${(props) => props.theme.breakpoints.sm.up}) {
 			padding: 40px 40px 56px;
@@ -184,7 +179,6 @@ const StyledGreeting = styled.article`
 			background: rgba(255, 255, 255, 1);
 			border-radius: 20px;
 			opacity: 0;
-			will-change: opacity, transform;
 			box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.08),
 				0 0 0 1px rgba(0, 0, 0, 0.04);
 
@@ -354,7 +348,6 @@ const StyledGreeting = styled.article`
 
 	.bt-1 {
 		opacity: 0;
-		will-change: opacity, transform;
 	}
 `;
 

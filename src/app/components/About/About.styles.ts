@@ -70,7 +70,6 @@ const AboutStyles = styled.section`
 		box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2),
 			0 0 0 1px rgba(0, 0, 0, 0.04);
 		opacity: 0;
-		will-change: transform, opacity;
 
 		@media (${(props) => props.theme.breakpoints.sm.up}) {
 			padding: 64px;

@@ -25,11 +25,10 @@ export function useAnimation(ref: any) {
 			.add(
 				{
 					targets: ".content-container",
-					scale: [0.8, 1],
 					translateY: ["100%", "0%"],
 					opacity: 1
 				},
-				"-=1800"
+				"-=2000"
 			);
 	}, [ref]);
 }

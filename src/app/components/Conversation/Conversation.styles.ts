@@ -14,7 +14,6 @@ const StyledConversation = styled.section`
 	.cm-1,
 	.cm-2 {
 		opacity: 0;
-		will-change: transform, opacity;
 	}
 
 	.cm-2 {

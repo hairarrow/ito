@@ -14,7 +14,6 @@ const FooterStyles = styled.footer`
 		font-size: 18px;
 		font-weight: 500;
 		opacity: 0;
-		will-change: opacity, transform;
 
 		& + .message {
 			margin-top: 8px;
@@ -26,7 +25,6 @@ const FooterStyles = styled.footer`
 
 	.bt-2 {
 		opacity: 0;
-		will-change: opacity, transform;
 	}
 `;
 
