@@ -11,11 +11,13 @@ import useAnimation from "./Contact.animation";
 import createMessage from "./createMessage";
 import useAnalytics from "../../hooks/useAnalytics";
 
+const PERSONAL_EMAIL = "hello@hairarrow.dev";
+
 const Contact = () => {
 	const defaultFields = {
-		msg: "test",
-		fromEmail: "test@test.com",
-		subject: "somesub"
+		msg: "",
+		fromEmail: "",
+		subject: ""
 	};
 	const defaultValid = {
 		email: false,
@@ -44,10 +46,17 @@ const Contact = () => {
 
 		if (Object.keys(valid).every((k) => valid[k])) {
 			analytics.logEvent<string>("send_message");
-			await createMessage(fields);
-			setFields(defaultFields);
-			setValid(defaultValid);
-			toggle();
+			try {
+				await createMessage(fields);
+				setFields(defaultFields);
+				setValid(defaultValid);
+				toggle();
+			} catch {
+				analytics.logEvent<string>("send_message_failed");
+				alert(
+					`Message Could Not Be Sent. Please try again in a couple of seconds or send your message directly to ${PERSONAL_EMAIL}`
+				);
+			}
 		}
 
 		setLoading(false);
@@ -119,7 +128,7 @@ const Contact = () => {
 							id="msg_to"
 							type="email"
 							name="email"
-							value="hello@hairarrow.dev"
+							value={PERSONAL_EMAIL}
 							disabled
 						/>
 					</label>{" "}

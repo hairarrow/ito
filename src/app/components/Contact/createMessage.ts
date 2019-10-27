@@ -1,17 +1,44 @@
 import fb, { db } from "../../fb";
 
-export interface INewMessage {
+export interface INewMessageRaw {
 	msg: string;
 	fromEmail: string;
 	subject?: string;
 }
 
-const createMessage = async ({ msg, fromEmail, subject }: INewMessage) =>
+interface INewMessage {
+	from: string;
+	to?: string;
+	message: {
+		text: string;
+		subject?: string;
+	};
+}
+
+const onCreateMessage = async ({
+	to = "hello@hairarrow.dev",
+	from,
+	message
+}: INewMessage) =>
 	db.collection("messages").add({
-		createdAt: fb.firestore.Timestamp.fromDate(new Date()),
-		msg,
-		fromEmail,
-		subject
+		createdAt: fb.firestore.FieldValue.serverTimestamp(),
+		to,
+		from,
+		replyTo: from,
+		message
 	});
+
+const createMessage = async ({
+	msg: text,
+	fromEmail: from,
+	subject
+}: INewMessageRaw) => {
+	const sanitizedMessage: INewMessage = {
+		from,
+		message: { text, subject: `[ITOLEAD] ${subject}` }
+	};
+
+	return onCreateMessage(sanitizedMessage);
+};
 
 export default createMessage;

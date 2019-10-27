@@ -1,10 +1,6 @@
 {
-	"functions": {
-		"source": "dist/functions",
-		"predeploy": ["npm run build-functions"]
-	},
 	"hosting": {
-		"public": "dist/out",
+		"public": "dist",
 		"rewrites": [
 			{
 				"source": "**",
