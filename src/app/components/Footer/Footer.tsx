@@ -5,7 +5,7 @@ import anime from "animejs";
 import useScrollPosition from "../../hooks/useScrollPosition";
 import Button from "../Button";
 import { ContactContext } from "../Contact/Contact.context";
-import fb from "../../fb";
+import useAnalytics from "../../hooks/useAnalytics";
 
 const Footer = () => {
 	const { dispatch } = useContext(ContactContext);
@@ -13,6 +13,7 @@ const Footer = () => {
 	const [shouldPlay, setShouldPlay] = useState(false);
 	const [hasPlayed, setHasPlayed] = useState(false);
 	const [scrollPosition, cleanupScroll] = useScrollPosition(containerRef);
+	const analytics = useAnalytics();
 
 	const toggleMsg = () =>
 		dispatch({ type: "UpdateShowMessage", value: true });
@@ -49,7 +50,7 @@ const Footer = () => {
 	}, [containerRef, shouldPlay, hasPlayed]);
 
 	useEffect(() => {
-		if (hasPlayed) fb.analytics().logEvent<string>("reached_bottom");
+		if (hasPlayed) analytics.logEvent<string>("reached_bottom");
 	}, [hasPlayed]);
 
 	return (

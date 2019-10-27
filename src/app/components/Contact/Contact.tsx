@@ -9,13 +9,13 @@ import { ContactContext } from "./Contact.context";
 import StyledContact from "./Contact.styles";
 import useAnimation from "./Contact.animation";
 import createMessage from "./createMessage";
-import fb from "../../fb";
+import useAnalytics from "../../hooks/useAnalytics";
 
 const Contact = () => {
 	const defaultFields = {
-		msg: "",
-		fromEmail: "",
-		subject: ""
+		msg: "test",
+		fromEmail: "test@test.com",
+		subject: "somesub"
 	};
 	const defaultValid = {
 		email: false,
@@ -30,6 +30,7 @@ const Contact = () => {
 	const [fields, setFields] = useState(defaultFields);
 	const [valid, setValid] = useState(defaultValid);
 	const [loading, setLoading] = useState(false);
+	const analytics = useAnalytics();
 
 	useAnimation(containerRef, showMessage);
 
@@ -42,7 +43,7 @@ const Contact = () => {
 		setLoading(true);
 
 		if (Object.keys(valid).every((k) => valid[k])) {
-			fb.analytics().logEvent<string>("send_message");
+			analytics.logEvent<string>("send_message");
 			await createMessage(fields);
 			setFields(defaultFields);
 			setValid(defaultValid);
@@ -83,7 +84,7 @@ const Contact = () => {
 	useEffect(() => {
 		if (showMessage) {
 			document.addEventListener("mousedown", handleClick);
-			fb.analytics().logEvent<string>("open_contact_modal");
+			analytics.logEvent<string>("open_contact_modal");
 		} else document.removeEventListener("mousedown", handleClick);
 
 		return () => {

@@ -1,12 +1,7 @@
 {
 	"functions": {
 		"source": "dist/functions",
-		"predeploy": [
-			"npm run build-functions",
-			"npm run build",
-			"npm run copy-deps",
-			"npm run install-deps"
-		]
+		"predeploy": ["npm run build-functions"]
 	},
 	"hosting": {
 		"public": "dist/out",

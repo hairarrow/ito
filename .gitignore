@@ -4,3 +4,5 @@ node_modules/
 .firebase
 dist/
 firebase-debug.log
+.runtimeconfig.json
+firestore-debug.log

@@ -1,4 +1,4 @@
-import firebase from "../../fb";
+import fb, { db } from "../../fb";
 
 export interface INewMessage {
 	msg: string;
@@ -7,14 +7,11 @@ export interface INewMessage {
 }
 
 const createMessage = async ({ msg, fromEmail, subject }: INewMessage) =>
-	firebase
-		.firestore()
-		.collection("messages")
-		.add({
-			createdAt: firebase.firestore.Timestamp.fromDate(new Date()),
-			msg,
-			fromEmail,
-			subject
-		});
+	db.collection("messages").add({
+		createdAt: fb.firestore.Timestamp.fromDate(new Date()),
+		msg,
+		fromEmail,
+		subject
+	});
 
 export default createMessage;

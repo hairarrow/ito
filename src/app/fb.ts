@@ -15,7 +15,14 @@ const firebaseConfig = {
 
 !firebase.apps.length && firebase.initializeApp(firebaseConfig);
 
-// if (process.env.NODE_ENV === "development")
-// 	firebase.functions().useFunctionsEmulator("http://localhost:5000");
+const db = firebase.firestore();
 
+if (process.env.NODE_ENV === "development") {
+	db.settings({
+		host: "localhost:8080",
+		ssl: false
+	});
+}
+
+export { db };
 export default firebase;

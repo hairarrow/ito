@@ -6,11 +6,13 @@ import About from "../About";
 import Footer from "../Footer";
 import Contact from "../Contact";
 import { ContactContextProvider } from "../Contact/Contact.context";
-import fb from "../../fb";
+import useAnalytics from "../../hooks/useAnalytics";
 
 const App = () => {
+	const analytics = useAnalytics();
+
 	useEffect(() => {
-		fb.analytics().logEvent<string>("page_view");
+		analytics.logEvent<string>("page_view");
 	}, []);
 
 	return (

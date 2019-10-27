@@ -139,10 +139,13 @@ const ServicesStyles = styled.section`
 			padding: 0;
 			margin-top: auto;
 			flex-wrap: wrap;
-			background: var(--gradient);
-			-webkit-text-fill-color: transparent;
-			-webkit-background-clip: text;
 			line-height: 24px;
+
+			@media (prefers-color-scheme: light) {
+				background: var(--gradient);
+				-webkit-text-fill-color: transparent;
+				-webkit-background-clip: text;
+			}
 		}
 
 		.service-tag {
