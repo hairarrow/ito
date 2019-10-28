@@ -5,3 +5,5 @@
 ## `yarn export`
 
 ### `yarn deploy`
+
+### 'env ANALYZE=true yarn build`
