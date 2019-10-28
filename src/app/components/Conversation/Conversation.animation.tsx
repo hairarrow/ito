@@ -5,8 +5,6 @@ export default function useAnimation(
 	ref: MutableRefObject<HTMLElement>,
 	enabled = false
 ) {
-	const wdw = typeof window !== "undefined" && window;
-	console.log(wdw);
 	useEffect(() => {
 		if (enabled)
 			anime
