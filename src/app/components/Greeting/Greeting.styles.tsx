@@ -81,7 +81,7 @@ const StyledGreeting = styled.article`
 		padding-left: 16px;
 		padding-right: 16px;
 		font-size: 21px;
-		line-height: 48px;
+		line-height: 36px;
 		font-weight: 800;
 		opacity: 0;
 		transform-origin: bottom left;

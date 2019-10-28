@@ -25,7 +25,7 @@ export function useAnimation(ref: any) {
 			.add(
 				{
 					targets: ".content-container",
-					translateY: ["100%", "0%"],
+					easing: "easeOutQuint",
 					opacity: 1
 				},
 				"-=2000"

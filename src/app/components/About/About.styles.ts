@@ -28,11 +28,6 @@ const AboutStyles = styled.section`
 		background: var(--gradient);
 		transform-origin: top center;
 		transform: skewY(3deg);
-
-		@media (prefers-color-scheme: dark) {
-			background: rgba(255, 255, 255, 0.05);
-			background: var(--gradient);
-		}
 	}
 
 	.ball {
@@ -69,7 +64,7 @@ const AboutStyles = styled.section`
 		opacity: 0;
 
 		@media (prefers-color-scheme: dark) {
-			background: rgba(0, 0, 0, 0.6);
+			background: #000;
 		}
 
 		@media (${(props) => props.theme.breakpoints.sm.up}) {

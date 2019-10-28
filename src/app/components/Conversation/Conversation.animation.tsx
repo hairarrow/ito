@@ -23,9 +23,7 @@ export default function useAnimation(
 					{
 						targets: ".service",
 						opacity: 1,
-						delay: anime.stagger(80),
-						translateX: (_, i) =>
-							i % 2 ? ["100%", "0%"] : ["-100%", "0%"]
+						delay: anime.stagger(80)
 					},
 					"-=300"
 				)
