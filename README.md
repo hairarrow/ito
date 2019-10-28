@@ -6,4 +6,4 @@
 
 ### `yarn deploy`
 
-### 'env ANALYZE=true yarn build`
+### `env ANALYZE=true yarn build`
