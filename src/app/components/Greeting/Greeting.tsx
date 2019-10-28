@@ -44,15 +44,14 @@ const Greeting = () => {
 				</header>
 
 				<p className="lead contained">
-					I build thoughtful user experiences <wbr />
+					I build thoughtful experiences <wbr />
 					powered by code
 				</p>
 
 				<p className="lead lead--sub contained">
-					I'm a <b>designer</b> &amp; <b>full-stack developer</b>{" "}
-					based in Los Angeles specializing in simplicity,
-					scalability, &amp; data-driven design solutions built for
-					growth.
+					I'm a <b>designer &amp; full-stack developer</b> based in
+					Los Angeles specializing in simplicity, scalability, &amp;
+					data-driven design solutions built for growth.
 				</p>
 
 				<span className="button-container">

@@ -1,7 +1,7 @@
 const FEATURED_WORK = [
 	{
 		company: "Real Geeks",
-		url: "https://realgeeks.com/facebook-marketing-tool",
+		url: "//realgeeks.com/facebook-marketing-tool",
 		title: "Better ads, higher conversion rates, less time required",
 		tags: ["js", "python", "sql", "product"],
 		description:

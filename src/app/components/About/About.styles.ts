@@ -6,7 +6,11 @@ const AboutStyles = styled.section`
 	min-height: 50vh;
 	margin-top: 64px;
 	padding: 100px 8px;
-	overflow: hidden;
+
+	@media (${(props) => props.theme.breakpoints.xl.up}) {
+		padding: 160px 0;
+		min-height: 60vh;
+	}
 
 	--gradient: radial-gradient(
 		circle at 100% 0,
@@ -51,6 +55,33 @@ const AboutStyles = styled.section`
 		}
 	}
 
+	.content-container {
+		margin: 80px auto;
+		position: relative;
+		max-width: 600px;
+		width: 100%;
+		padding: 24px;
+		padding-bottom: 64px;
+		background: rgba(255, 255, 255, 1);
+		border-radius: 20px;
+		box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2),
+			0 0 0 1px rgba(0, 0, 0, 0.04);
+		opacity: 0;
+
+		@media (prefers-color-scheme: dark) {
+			background: rgba(0, 0, 0, 0.6);
+		}
+
+		@media (${(props) => props.theme.breakpoints.sm.up}) {
+			padding: 64px;
+		}
+
+		@media (${(props) => props.theme.breakpoints.xl.up}) {
+			max-width: 900px;
+			padding-bottom: 104px;
+		}
+	}
+
 	.content-title {
 		display: inline-block;
 		font-weight: 800;
@@ -62,27 +93,13 @@ const AboutStyles = styled.section`
 		background-clip: text;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
-	}
 
-	.content-container {
-		margin: 80px auto;
-		position: relative;
-		max-width: 600px;
-		width: 100%;
-		padding: 24px;
-		padding-bottom: 64px;
-		background: rgba(255, 255, 255, 0.8);
-		border-radius: 20px;
-		box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2),
-			0 0 0 1px rgba(0, 0, 0, 0.04);
-		opacity: 0;
-
-		@media (${(props) => props.theme.breakpoints.sm.up}) {
-			padding: 64px;
-		}
-
-		@media (prefers-color-scheme: dark) {
-			background: rgba(0, 0, 0, 0.8);
+		@media (${(props) => props.theme.breakpoints.xl.up}) {
+			font-size: 42px;
+			line-height: 1.6;
+			margin-bottom: 0.2vw;
+			padding-left: 64px;
+			padding-top: 36px;
 		}
 	}
 
@@ -105,6 +122,18 @@ const AboutStyles = styled.section`
 				width: 100px;
 				height: 10px;
 				background: var(--gradient);
+			}
+		}
+
+		@media (${(props) => props.theme.breakpoints.xl.up}) {
+			font-size: 24px;
+			padding-left: 64px;
+			padding-right: 64px;
+			padding-right: 64px;
+
+			& + .content:after {
+				left: 64px;
+				width: 8vw;
 			}
 		}
 	}

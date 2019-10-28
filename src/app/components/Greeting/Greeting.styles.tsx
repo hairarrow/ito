@@ -16,6 +16,10 @@ const StyledGreeting = styled.article`
 		@media (${(props) => props.theme.breakpoints.lg.up}) {
 			max-width: 800px;
 		}
+
+		@media (${(props) => props.theme.breakpoints.xl.up}) {
+			max-width: 50vw;
+		}
 	}
 
 	.greeting-container {
@@ -78,7 +82,7 @@ const StyledGreeting = styled.article`
 		padding-right: 16px;
 		font-size: 21px;
 		line-height: 48px;
-		font-weight: 500;
+		font-weight: 800;
 		opacity: 0;
 		transform-origin: bottom left;
 
@@ -116,6 +120,17 @@ const StyledGreeting = styled.article`
 				line-height: 36px;
 			}
 		}
+
+		@media (${(props) => props.theme.breakpoints.xl.up}) {
+			font-size: 3vw;
+			line-height: 1.2;
+
+			&--sub {
+				font-size: 1vw;
+				line-height: 1.8;
+				max-width: 90%;
+			}
+		}
 	}
 
 	.featured {
@@ -134,6 +149,11 @@ const StyledGreeting = styled.article`
 
 		@media (${(props) => props.theme.breakpoints.sm.up}) {
 			padding: 40px 40px 56px;
+		}
+
+		@media (${(props) => props.theme.breakpoints.xl.up}) {
+			max-width: 58vw;
+			padding: 64px 80px 80px;
 		}
 
 		@media (prefers-color-scheme: dark) {
@@ -167,6 +187,11 @@ const StyledGreeting = styled.article`
 			background-clip: text;
 			-webkit-background-clip: text;
 			-webkit-text-fill-color: transparent;
+
+			@media (${(props) => props.theme.breakpoints.xl.up}) {
+				font-size: 1.6vw;
+				line-height: 1.4;
+			}
 		}
 
 		&-item {
@@ -258,6 +283,10 @@ const StyledGreeting = styled.article`
 					font-size: 24px;
 					font-weight: 800;
 					line-height: 1.4;
+
+					@media (${(props) => props.theme.breakpoints.xl.up}) {
+						font-size: 1.6vw;
+					}
 				}
 
 				&-tags {
@@ -281,6 +310,11 @@ const StyledGreeting = styled.article`
 				line-height: 28px;
 				font-weight: 600;
 				opacity: 0.8;
+
+				@media (${(props) => props.theme.breakpoints.xl.up}) {
+					font-size: 0.84vw;
+					line-height: 1.6;
+				}
 			}
 		}
 
@@ -320,6 +354,12 @@ const StyledGreeting = styled.article`
 
 	.bt-1 {
 		opacity: 0;
+
+		@media (${(props) => props.theme.breakpoints.xl.up}) {
+			padding: 0.6vw 1vw;
+			font-size: 1vw;
+			line-height: 1.2;
+		}
 	}
 `;
 

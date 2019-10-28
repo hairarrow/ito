@@ -1,10 +1,9 @@
-import baseStyled, { ThemedStyledInterface } from "styled-components";
-
 const breakpoints = {
 	sm: 500,
 	md: 700,
 	lg: 1000,
-	xl: 1400
+	xl: 1400,
+	xxl: 2000
 };
 
 const theme = {
@@ -27,6 +26,5 @@ const theme = {
 };
 
 export type Theme = typeof theme;
-export const styled = baseStyled as ThemedStyledInterface<Theme>;
 
 export default theme;
