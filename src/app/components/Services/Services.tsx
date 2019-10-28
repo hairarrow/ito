@@ -1,4 +1,3 @@
-import React from "react";
 import ServicesStyles from "./Services.styles";
 
 // Services animation located in Conversation

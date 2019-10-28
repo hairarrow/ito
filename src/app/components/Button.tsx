@@ -1,4 +1,4 @@
-import React, { FC, HTMLProps } from "react";
+import { FC, HTMLProps } from "react";
 import styled from "styled-components";
 
 const Button: FC<HTMLProps<HTMLButtonElement>> = ({

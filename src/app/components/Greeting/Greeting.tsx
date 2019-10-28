@@ -1,4 +1,4 @@
-import React, { useRef, useContext } from "react";
+import { useRef, useContext } from "react";
 import StyledGreeting from "./Greeting.styles";
 import { useAnimation } from "./Greeting.animation";
 import convertToLetters from "../convertToLetters";

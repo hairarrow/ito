@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useAnimation } from "./About.animation";
 import AboutStyles from "./About.styles";
 import useScrollPosition from "../../hooks/useScrollPosition";

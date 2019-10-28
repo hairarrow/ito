@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Message from "./Message";
 import ConversationStyles from "./Conversation.styles";
 import useScrollPosition from "../../hooks/useScrollPosition";

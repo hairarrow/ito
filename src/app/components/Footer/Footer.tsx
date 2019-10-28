@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState, useContext } from "react";
+import { useRef, useEffect, useState, useContext } from "react";
 import Message from "../Conversation/Message";
 import FooterStyles from "./Footer.styles";
 import anime from "animejs";

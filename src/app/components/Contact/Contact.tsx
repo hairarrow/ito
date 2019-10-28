@@ -1,10 +1,4 @@
-import React, {
-	useContext,
-	useState,
-	useRef,
-	useEffect,
-	ChangeEvent
-} from "react";
+import { useContext, useState, useRef, useEffect, ChangeEvent } from "react";
 import { ContactContext } from "./Contact.context";
 import StyledContact from "./Contact.styles";
 import useAnimation from "./Contact.animation";
