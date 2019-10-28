@@ -6,6 +6,7 @@ import useScrollPosition from "../../hooks/useScrollPosition";
 import Button from "../Button";
 import { ContactContext } from "../Contact/Contact.context";
 import useAnalytics from "../../hooks/useAnalytics";
+import SocialMedia from "./SocialMedia";
 
 const Footer = () => {
 	const { dispatch } = useContext(ContactContext);
@@ -43,7 +44,13 @@ const Footer = () => {
 						easing: "easeOutQuint"
 					},
 					"-=640"
-				);
+				)
+				.add({
+					targets: ".sm-link-img",
+					opacity: 1,
+					translateY: [80, 0],
+					delay: anime.stagger(80)
+				});
 			setHasPlayed(true);
 			cleanupScroll();
 		}
@@ -63,6 +70,7 @@ const Footer = () => {
 			<Button className="bt-2" onClick={toggleMsg}>
 				Say Hello
 			</Button>
+			<SocialMedia />
 		</FooterStyles>
 	);
 };
