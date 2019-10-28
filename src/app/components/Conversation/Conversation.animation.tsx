@@ -5,6 +5,8 @@ export default function useAnimation(
 	ref: MutableRefObject<HTMLElement>,
 	enabled = false
 ) {
+	const wdw = typeof window !== "undefined" && window;
+	console.log(wdw);
 	useEffect(() => {
 		if (enabled)
 			anime
@@ -21,17 +23,20 @@ export default function useAnimation(
 					{
 						targets: ".service",
 						opacity: 1,
-						delay: anime.stagger(120),
+						delay: anime.stagger(80),
 						translateX: (_, i) =>
 							i % 2 ? ["100%", "0%"] : ["-100%", "0%"]
 					},
 					"-=300"
 				)
-				.add({
-					targets: ".service-tag",
-					translateY: ["100%", "0%"],
-					opacity: [0, 0.6],
-					delay: anime.stagger(20)
-				});
+				.add(
+					{
+						targets: ".service-tag",
+						translateY: ["100%", "0%"],
+						opacity: [0, 0.6],
+						delay: anime.stagger(20)
+					},
+					"-=800"
+				);
 	}, [ref, enabled]);
 }

@@ -7,7 +7,6 @@ const ServicesStyles = styled.section`
 	padding: 8px;
 	padding-bottom: 60px;
 	overflow: hidden;
-	max-width: var(--container-width);
 
 	.services-title {
 		display: inline-block;
@@ -35,13 +34,16 @@ const ServicesStyles = styled.section`
 		display: grid;
 		grid-template-rows: auto;
 		grid-gap: 16px;
+		max-width: var(--container-width);
+		margin: auto;
 
-		@media (${(props) => props.theme.breakpoints.sm.up}) {
+		@media (${(props) => props.theme.breakpoints.md.up}) {
 			grid-template-columns: repeat(16, 1fr);
 		}
 	}
 
 	.service {
+		position: relative;
 		padding: 40px;
 		display: flex;
 		flex-direction: column;
@@ -110,6 +112,7 @@ const ServicesStyles = styled.section`
 			margin: 0;
 			margin-bottom: 16px;
 			background: var(--gradient);
+			background-clip: text;
 			-webkit-background-clip: text;
 			-webkit-text-fill-color: transparent;
 		}

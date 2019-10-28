@@ -57,12 +57,19 @@ export function useAnimation(ref: any) {
 			)
 			.add(
 				{
-					targets: [".lead", ".featured", ".featured-item", ".bt-1"],
+					targets: [".lead", ".bt-1"],
 					opacity: 1,
-					translateY: ["50%", "0%"],
+					translateY: ["100%", "0%"],
 					delay: anime.stagger(20)
 				},
 				"-=200"
+			)
+			.add(
+				{
+					targets: [".featured", ".featured-item"],
+					opacity: 1
+				},
+				"-=400"
 			);
 	}, [ref]);
 }

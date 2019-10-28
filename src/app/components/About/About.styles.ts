@@ -8,11 +8,18 @@ const AboutStyles = styled.section`
 	padding: 100px 8px;
 	overflow: hidden;
 
+	--gradient: radial-gradient(
+		circle at 100% 0,
+		var(--accent),
+		var(--pink),
+		var(--orange)
+	);
+
 	.fake-container {
 		position: absolute;
 		top: 80px;
-		left: -100px;
-		right: -100px;
+		left: 0;
+		right: 0;
 		bottom: 80px;
 		background: var(--gradient);
 		transform-origin: top center;
@@ -36,15 +43,13 @@ const AboutStyles = styled.section`
 			height: 40px;
 			position: absolute;
 			top: 0;
-			right: calc(100px + 10px);
+			right: 0;
 			transform: translateY(-40px);
 			border-radius: 40px;
 			background: var(--accent);
 			z-index: 10;
 		}
 	}
-
-	--gradient: linear-gradient(to bottom right, var(--accent), var(--pink));
 
 	.content-title {
 		display: inline-block;
@@ -54,6 +59,7 @@ const AboutStyles = styled.section`
 		margin-bottom: 16px;
 		margin: 0;
 		background: var(--gradient);
+		background-clip: text;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 	}

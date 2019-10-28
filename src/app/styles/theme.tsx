@@ -12,7 +12,8 @@ const theme = {
 		bg: "#fff",
 		fg: "rgba(0, 0, 0, 0.8)",
 		accent: `rgba(0, 98, 255, 1)`,
-		alt: `rgba(255, 12, 253, 1)`
+		alt: `rgba(255, 12, 253, 1)`,
+		orange: "#e35d5b"
 	},
 	breakpoints: Object.keys(breakpoints).reduce<{
 		[k: string]: { up: string; down: string };

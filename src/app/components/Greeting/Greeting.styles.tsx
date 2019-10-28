@@ -100,6 +100,7 @@ const StyledGreeting = styled.article`
 
 		@media (${(props) => props.theme.breakpoints.md.up}) {
 			font-size: 32px;
+			line-height: 48px;
 
 			&--sub {
 				font-size: 18px;
@@ -108,7 +109,7 @@ const StyledGreeting = styled.article`
 
 		@media (${(props) => props.theme.breakpoints.lg.up}) {
 			font-size: 42px;
-			line-height: 68px;
+			line-height: 58px;
 
 			&--sub {
 				font-size: 18px;
@@ -162,11 +163,8 @@ const StyledGreeting = styled.article`
 			font-weight: 800;
 			font-size: 32px;
 			line-height: 64px;
-			background: linear-gradient(
-				to top left,
-				var(--accent),
-				var(--pink)
-			);
+			background: linear-gradient(to right, var(--accent), var(--pink));
+			background-clip: text;
 			-webkit-background-clip: text;
 			-webkit-text-fill-color: transparent;
 		}
@@ -202,44 +200,13 @@ const StyledGreeting = styled.article`
 				}
 			}
 
-			&:after {
-				content: "";
-				position: absolute;
-				z-index: -1;
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				border-radius: 20px;
-				box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-				opacity: 0;
-				transition: opacity 240ms cubic-bezier(0.22, 0.61, 0.36, 1);
-			}
-
-			&:hover:after {
-				opacity: 1;
-			}
-
 			&:hover {
-				.featured-item-logo {
-					filter: none;
-				}
-
 				.featured-item-header-top-row {
 					opacity: 1;
-					border-bottom: 4px solid rgba(0, 0, 0, 0.1);
-
-					@media (prefers-color-scheme: dark) {
-						border-bottom: 4px solid rgba(255, 255, 255, 0.3);
-					}
 				}
 
 				.featured-item-link {
 					color: var(--accent);
-				}
-
-				.featured-item-in-publication {
-					filter: none;
 				}
 			}
 
@@ -252,24 +219,29 @@ const StyledGreeting = styled.article`
 
 			&-header {
 				&-top-row {
+					position: relative;
 					display: flex;
 					justify-content: space-between;
 					align-items: center;
 					padding-bottom: 8px;
 					margin-bottom: 16px;
 					border: 0;
-					border-bottom: 4px solid rgba(0, 0, 0, 0.08);
 					opacity: 0.8;
 					transition: all 240ms cubic-bezier(0.22, 0.61, 0.36, 1);
-					border-image: linear-gradient(
-						to right,
-						var(--accent),
-						var(--pink)
-					);
-					border-image-slice: 1;
 
-					@media (prefers-color-scheme: dark) {
-						border-bottom: 4px solid rgba(255, 255, 255, 0.1);
+					&:after {
+						content: "";
+						position: absolute;
+						left: 0;
+						right: 0;
+						bottom: 0;
+						height: 4px;
+						background: linear-gradient(
+							to right,
+							var(--accent),
+							var(--pink),
+							var(--orange)
+						);
 					}
 				}
 
