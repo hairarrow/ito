@@ -10,8 +10,7 @@
 	"scripts": {
 		"dev": "next \"src/app\"",
 		"build": "next build \"src/app\"",
-		"preexport": "yarn build",
-		"export": "next export \"src/app\" -o \"dist\"",
+		"export": "rm -rf src/app/.next out && yarn build && next export \"src/app\" -o \"dist\"",
 		"prebuild-public": "yarn export",
 		"build-public": "cpx \"src/app/public/**/*.*\" \"dist\"",
 		"test": "echo \"Error: no test specified\" && exit 1",
