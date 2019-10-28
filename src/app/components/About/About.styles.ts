@@ -107,8 +107,10 @@ const AboutStyles = styled.section`
 		& + .content {
 			margin-top: 24px;
 			position: relative;
-			padding-bottom: 34px;
+		}
 
+		&:last-child {
+			padding-bottom: 34px;
 			&:after {
 				content: "";
 				position: absolute;

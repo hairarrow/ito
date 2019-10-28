@@ -35,9 +35,10 @@ const Conversation = () => {
 				title="I craft powerful digital experiences"
 			>
 				I have over 8 years of experience working across a variety of
-				industries, small businesses, and fortune 500, but I generally
-				focus on building accessible, high performing experiences that
-				are simple and easy to use.
+				industries. Whether I'm building for small business or a Fortune
+				500, I craft high performing experiences that value simplicity
+				and prioritize accessibility beyond the bare minimum that is
+				unfortunately common around the web.
 			</Message>
 		</ConversationStyles>
 	);

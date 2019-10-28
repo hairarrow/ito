@@ -39,7 +39,7 @@ const FEATURED_WORK = [
 		title: "Seamless enterprise health and wellness benefits",
 		tags: ["react", "node", "serverless", "product"],
 		description:
-			"I led a pivot from a costly, traditional credit card product to a sustainable service model that doesn't require customers to change their behavior"
+			"I led a pivot from a costly, traditional credit card product to a sustainable service model that doesn't require customers to change their behavior. I leveraged a serverless architecture and integrations with Plaid and Dwolla to process and classify thousands of daily customer transactions for automatic reimbursements."
 	}
 ];
 
