@@ -1,7 +1,7 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import { ServerStyleSheet } from "styled-components";
 
-const META = {
+export const META = {
 	title: "Emmanuel Herrero: Designer & Full-stack Developer",
 	description:
 		"I'm a designer and & full-stack developer based in Los Angeles specializing in simplicity, scalability, & data-driven design solutions built for growth.",
@@ -47,7 +47,6 @@ export default class MyDocument extends Document {
 		return (
 			<Html lang="en">
 				<Head>
-					<title>{META.title}</title>
 					<link
 						rel="apple-touch-icon"
 						sizes="180x180"

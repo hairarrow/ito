@@ -35,6 +35,7 @@ const SocialMedia = () => {
 						target="_blank"
 						rel="noopener noreferrer nofollow external"
 						className="sm-link"
+						aria-label={name}
 					>
 						<img src={icon} alt={name} className="sm-link-img" />
 					</a>

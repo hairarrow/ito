@@ -148,6 +148,13 @@ const Contact = () => {
 							onChange={handleChangeSubject}
 						/>
 					</label>
+					<label
+						htmlFor="msg_body"
+						aria-hidden="true"
+						style={{ display: "none" }}
+					>
+						Body:
+					</label>
 					<textarea
 						onChange={handleChangeMessage}
 						id="msg_body"
