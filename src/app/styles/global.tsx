@@ -8,10 +8,12 @@ const GlobalStyle = createGlobalStyle`
         --accent: ${theme.colors.accent};
         --pink: ${theme.colors.alt};
         --orange: ${theme.colors.orange};
+        --gray: ${theme.colors.gray};
 
         @media (prefers-color-scheme: dark) {
             --bg-color: #000;
             --fg-color: ${theme.colors.bg};
+            --gray: #888;
         }
     }
 
