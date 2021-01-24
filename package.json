@@ -1,47 +1,44 @@
 {
-	"proxy": "http://localhost:5001",
-	"name": "ito",
-	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
-	"engines": {
-		"node": "8"
-	},
-	"scripts": {
-		"dev": "next \"src/app\"",
-		"build": "next build \"src/app\"",
-		"export": "rm -rf src/app/.next out && yarn build && next export \"src/app\" -o \"dist\"",
-		"prebuild-public": "yarn export",
-		"build-public": "cpx \"src/app/public/**/*.*\" \"dist\"",
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"clean": "rimraf \"dist\"",
-		"deploy": "firebase deploy --only hosting"
-	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"dependencies": {
-		"animejs": "^3.1.0",
-		"firebase": "^7.2.2",
-		"lodash": "^4.17.15",
-		"next": "^9.1.2-canary.8",
-		"react": "^16.11.0",
-		"react-dom": "^16.11.0",
-		"styled-components": "^4.4.0"
-	},
-	"devDependencies": {
-		"@next/bundle-analyzer": "^9.1.1",
-		"@types/animejs": "^3.1.0",
-		"@types/lodash": "^4.14.144",
-		"@types/next": "^8.0.6",
-		"@types/node": "^12.11.5",
-		"@types/react": "^16.9.9",
-		"@types/styled-components": "^4.1.19",
-		"babel-plugin-styled-components": "^1.10.6",
-		"cpx": "^1.5.0",
-		"cross-env": "^6.0.3",
-		"firebase-tools": "^7.6.1",
-		"rimraf": "^3.0.0",
-		"typescript": "^3.6.4"
-	}
+  "proxy": "http://localhost:5001",
+  "name": "ito",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next \"src/app\"",
+    "build": "next build \"src/app\"",
+    "export": "rm -rf src/app/.next out && yarn build && next export \"src/app\" -o \"dist\"",
+    "prebuild-public": "yarn export",
+    "build-public": "cpx \"src/app/public/**/*.*\" \"dist\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rimraf \"dist\"",
+    "deploy": "firebase deploy --only hosting"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "animejs": "^3.1.0",
+    "firebase": "^7.2.2",
+    "lodash": "^4.17.15",
+    "next": "^9.1.2-canary.8",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "styled-components": "^4.4.0"
+  },
+  "devDependencies": {
+    "@next/bundle-analyzer": "^9.1.1",
+    "@types/animejs": "^3.1.0",
+    "@types/lodash": "^4.14.144",
+    "@types/next": "^8.0.6",
+    "@types/node": "^12.11.5",
+    "@types/react": "^16.9.9",
+    "@types/styled-components": "^4.1.19",
+    "babel-plugin-styled-components": "^1.10.6",
+    "cpx": "^1.5.0",
+    "cross-env": "^6.0.3",
+    "firebase-tools": "^7.6.1",
+    "rimraf": "^3.0.0",
+    "typescript": "^3.6.4"
+  }
 }
