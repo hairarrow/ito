@@ -27,16 +27,87 @@ function toggleTypingStatus(className: string) {
 export function useAnimation(ref: any) {
   useEffect(() => {
     if (!ref) return;
+
     anime
       .timeline({
         easing: "easeOutExpo",
-        duration: 200,
         begin() {
           console.time("anim");
         },
         complete() {
           console.timeEnd("anim");
         }
+      })
+      .add({
+        targets: ".greeting--name",
+        translateY: ["-100%", "0%"],
+        opacity: 1,
+        complete() {
+          anime({
+            targets: ".greeting--name .dot",
+            keyframes: [{ scale: 1 }, { scale: 1.4 }, { scale: 1 }],
+            duration: 800,
+            delay: anime.stagger(80),
+            easing: "easeInOutCubic",
+            loop: 2
+          });
+        }
+      })
+      .add(
+        {
+          targets: ".greeting--name",
+          opacity: 0,
+          complete() {
+            toggleTypingStatus(".greeting--name");
+            document
+              .querySelector(".greeting--hello")
+              .classList.add("greeting--no-tail");
+          }
+        },
+        "+=1400"
+      )
+      .add({
+        targets: ".greeting--name",
+        translateY: ["100%", "0%"],
+        opacity: 1,
+        duration: 420,
+        complete() {}
+      })
+      .add(
+        {
+          targets: ".greeting--name .greeting-text",
+          opacity: 1,
+          complete() {
+            anime({
+              easing: "easeOutExpo",
+              targets: ".lead",
+              opacity: 1
+            });
+            anime({
+              easing: "easeOutExpo",
+              targets: [".featured", ".featured-item"],
+              translateY: ["100%", "0%"],
+              opacity: 1,
+              complete() {
+                anime({
+                  targets: ".bt-1",
+                  rotateZ: [20, 0],
+                  translateY: ["200%", "0%"],
+                  opacity: 1
+                });
+              }
+            });
+          }
+        },
+        "-=500"
+      )
+      .add({});
+
+    return;
+    anime
+      .timeline({
+        easing: "easeOutExpo",
+        duration: 200
       })
       .add({
         targets: ".greeting--name",
@@ -55,9 +126,6 @@ export function useAnimation(ref: any) {
         duration: 80,
         complete() {
           toggleTypingStatus(".greeting--name");
-          document
-            .querySelector(".greeting--hello")
-            .classList.add("greeting--no-tail");
         }
       })
       .add({
