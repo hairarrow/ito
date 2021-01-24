@@ -25,7 +25,10 @@ const Greeting = () => {
     <StyledGreeting ref={containerRef}>
       <section className="container">
         <header className="greeting-container contained">
-          <p className="greeting greeting--hello greeting--typing">
+          <p
+            className="greeting greeting--hello greeting--typing"
+            aria-label="Hey"
+          >
             <TypingDots />
             <span className="greeting-text">{convertToLetters("Hey!")}</span>
 
@@ -45,8 +48,11 @@ const Greeting = () => {
           </p>
         </header>
 
-        <p className="lead contained">
-          I build thoughtful experiences <wbr />
+        <p
+          className="lead contained"
+          aria-label="I build thoughtful experiences powered by code"
+        >
+          I build thoughtful experiences <br />
           powered by code
         </p>
 

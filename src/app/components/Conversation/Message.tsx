@@ -94,6 +94,10 @@ const MessageStyles = styled.article`
     border-bottom-right-radius: 10px;
   }
 
+  &.message--no-tail:before {
+    opacity: 0;
+  }
+
   .message-title {
     margin: 0;
     font-size: inherit;

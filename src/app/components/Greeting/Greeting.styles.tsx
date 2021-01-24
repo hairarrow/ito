@@ -102,13 +102,12 @@ const StyledGreeting = styled.article`
       }
 
       &:before {
-        transform: scale(0.5) translateX(-10px);
-        transform-origin: bottom left;
+        transform: scale(0.4) translateX(-12px);
+        transform-origin: bottom;
       }
 
       &:after {
         transform: translateY(0px) translateX(7px) scale(0.8);
-        transform-origin: left;
       }
     }
 
@@ -122,6 +121,7 @@ const StyledGreeting = styled.article`
     &--hello {
       margin-top: 5vh;
       z-index: 2;
+      opacity: 1;
     }
 
     &--name {

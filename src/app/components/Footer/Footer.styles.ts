@@ -21,6 +21,14 @@ const FooterStyles = styled.footer`
     }
   }
 
+  .ms-1 {
+    z-index: 2;
+  }
+
+  .ms-2 {
+    z-index: 1;
+  }
+
   .bt-2 {
     opacity: 0;
   }

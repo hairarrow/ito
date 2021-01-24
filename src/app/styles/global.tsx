@@ -38,11 +38,13 @@ const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         min-height: 100%;
+        max-width: 100vw;
         width: 100%;
         font-size: 16px;
         font-family: 'SF UI Text', -apple-system, system-ui, 'Helvetica Neue', 'Segoe UI', sans-serif;
         color: var(--fg-color);
         background: var(--bg-color);
+        overflow-x: hidden;
     }
 `;
 
