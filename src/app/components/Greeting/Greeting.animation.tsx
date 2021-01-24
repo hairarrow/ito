@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import anime from "animejs";
-import document from "next/document";
 
 const greetingIn = () => ({
   opacity: 1,
@@ -10,22 +9,33 @@ const greetingIn = () => ({
 
 const greetingLetterIn = () => ({
   opacity: 1,
-  translateY: [300, 0],
-  duration: 600,
+  translateY: [-16, 0],
+  duration: 800,
   delay: anime.stagger(20)
 });
 
-const dotsScale = () => ({
-  targets: ".dot",
+const dotsScale = (parent: string) => ({
+  targets: `${parent} .dot`,
   keyframes: [
-    { scale: 0.8, backgroundColor: "rgba(0,0,0,0.1)" },
+    { scale: 1, backgroundColor: "rgba(0,0,0,0.1)" },
     { scale: 1.2, backgroundColor: "rgba(0,0,0,0.4)" },
-    { scale: 0.8, backgroundColor: "rgba(0,0,0,0.1)" }
+    { scale: 1, backgroundColor: "rgba(0,0,0,0.1)" }
   ],
   duration: 800,
-  delay: anime.stagger(80),
+  delay: anime.stagger(160),
   easing: "easeInOutCubic"
 });
+
+function toggleTypingStatus(className: string) {
+  const { classList } = document.querySelector(className);
+  const typingClass = "greeting--typing";
+
+  if (classList.contains(typingClass)) {
+    classList.remove(typingClass);
+  } else {
+    classList.add(typingClass);
+  }
+}
 
 export function useAnimation(ref: any) {
   useEffect(() => {
@@ -40,81 +50,59 @@ export function useAnimation(ref: any) {
         ...greetingIn()
       })
       .add({
-        ...dotsScale()
-      })
-      .add({
-        ...dotsScale(),
+        ...dotsScale(".greeting--hello"),
         complete() {
-          document.
+          toggleTypingStatus(".greeting--hello");
         }
-      });
-    // .add(
-    //   {
-    //     targets: ".greeting--hello .greeting-text .letter",
-    //     ...greetingLetterIn()
-    //   },
-    //   "-=360"
-    // )
-    // .add({
-    //   targets: ".greeting-wave",
-    //   opacity: 1,
-    //   rotateZ: [40, 0],
-    //   duration: 500
-    // });
-    return;
-    anime
-      // .timeline({ easing: "spring(1, 100, 10, 0)" })
-      .timeline({ easing: "easeOutElastic(10, 2)" })
-      .add({
-        targets: ".greeting--hello",
-        ...greetingIn()
       })
-      .add(
-        {
-          targets: ".greeting--hello .greeting-text .letter",
-          ...greetingLetterIn()
-        },
-        "-=200"
-      )
+      .add({
+        targets: ".greeting--hello .greeting-text .letter",
+        ...greetingLetterIn()
+      })
       .add(
         {
           targets: ".greeting-wave",
-          translateY: [100, 0],
-          rotateZ: [80, 0],
-          opacity: 1
-          // easing: "spring(2, 80, 12, 0)"
+          opacity: 1,
+          rotateZ: [40, 0],
+          duration: 500,
+          complete() {
+            toggleTypingStatus(".greeting--name");
+          }
         },
-        "-=200"
+        "-=800"
       )
       .add(
         {
           targets: ".greeting--name",
-          ...greetingIn()
-        }
-        // "-=1800"
-      )
-      .add(
-        {
-          targets: ".greeting--name .greeting-text .letter",
-          ...greetingLetterIn()
-        }
-        // "-=1800"
-      )
-      .add(
-        {
-          targets: [".lead", ".bt-1"],
-          opacity: 1,
-          translateY: ["100%", "0%"],
-          delay: anime.stagger(20)
-        }
-        // "-=200"
-      )
-      .add(
-        {
-          targets: [".featured", ".featured-item"],
+          translateY: ["-100%", "0%"],
           opacity: 1
-        }
-        // "-=400"
-      );
+        },
+        "-=200"
+      )
+      .add(
+        {
+          ...dotsScale(".greeting--name"),
+          complete() {
+            toggleTypingStatus(".greeting--name");
+            document
+              .querySelector(".greeting--hello")
+              .classList.add("greeting--no-tail");
+          }
+        },
+        "-=400"
+      )
+      .add({
+        targets: ".greeting--name .greeting-text .letter",
+        ...greetingLetterIn()
+      })
+      .add({
+        targets: [".lead", ".bt-1", ".featured", ".featured-item"],
+        opacity: 1,
+        translateY: ["100%", "0%"],
+        delay: anime.stagger(40),
+        duration: 800
+      });
+
+    return;
   }, [ref]);
 }

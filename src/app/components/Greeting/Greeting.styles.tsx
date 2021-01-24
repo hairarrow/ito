@@ -38,12 +38,12 @@ const StyledGreeting = styled.article`
     padding-right: 16px;
     font-size: 24px;
     line-height: 48px;
-    border-radius: 24px;
+    border-radius: 20px;
     white-space: nowrap;
-    /* overflow: hidden; */
     background: var(--accent);
     opacity: 0;
     transform-origin: bottom left;
+    transition: background 320ms ease-out;
 
     .typing-dots {
       opacity: 0;
@@ -59,38 +59,73 @@ const StyledGreeting = styled.article`
     }
 
     & + .greeting {
-      margin-top: 8px;
+      margin-top: 1px;
+    }
+
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      background-color: var(--accent);
+      transition: inherit;
+    }
+
+    &:before {
+      width: 20px;
+      height: 20px;
+      bottom: 0;
+      left: -8px;
+      background-color: var(--accent);
+      border-bottom-right-radius: 15px;
+      z-index: 0;
+    }
+
+    &:after {
+      bottom: 0;
+      left: -10px;
+      width: 10px;
+      height: 20px;
+      background-color: var(--bg-color);
+      border-bottom-right-radius: 10px;
+      z-index: 1;
+      transition: none;
+    }
+
+    &.greeting--typing {
+      &:before,
+      &:after {
+        background-color: var(--gray);
+        width: 16px;
+        height: 16px;
+        border-radius: 16px;
+      }
+
+      &:before {
+        transform: scale(0.5) translateX(-10px);
+        transform-origin: bottom left;
+      }
+
+      &:after {
+        transform: translateY(0px) translateX(7px) scale(0.8);
+        transform-origin: left;
+      }
+    }
+
+    &--no-tail {
+      &:before {
+        opacity: 0;
+        transition: opacity 120ms linear;
+      }
     }
 
     &--hello {
       margin-top: 5vh;
-      /* border-bottom-left-radius: 8px; */
-
-      &:before,
-      &:after {
-        content: "";
-        display: block;
-        position: absolute;
-        width: 12px;
-        height: 12px;
-        border-radius: 12px;
-        background-color: var(--gray);
-        bottom: 0;
-        left: 0;
-      }
-
-      &:before {
-        /* transform: translateY(8px) translateX(8px); */
-        transform: scale(0.8);
-      }
-
-      &:after {
-        transform: translateY(4px) translateX(-8px) scale(0.4);
-      }
+      z-index: 2;
     }
 
     &--name {
-      /* border-top-left-radius: 8px; */
+      z-index: 1;
     }
 
     &-text {

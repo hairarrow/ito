@@ -6,6 +6,14 @@ import FEATURED_WORK from "./FEATURED_WORK";
 import { ContactContext } from "../Contact/Contact.context";
 import Button from "../Button";
 
+const TypingDots = () => (
+  <span className="typing-dots">
+    <span className="dot dot0" />
+    <span className="dot dot1" />
+    <span className="dot dot2" />
+  </span>
+);
+
 const Greeting = () => {
   const { dispatch } = useContext(ContactContext);
   const containerRef = useRef(null);
@@ -18,11 +26,7 @@ const Greeting = () => {
       <section className="container">
         <header className="greeting-container contained">
           <p className="greeting greeting--hello greeting--typing">
-            <span className="typing-dots">
-              <span className="dot dot0" />
-              <span className="dot dot1" />
-              <span className="dot dot2" />
-            </span>
+            <TypingDots />
             <span className="greeting-text">{convertToLetters("Hey!")}</span>
 
             <span role="img" aria-label="wave" className="greeting-wave">
@@ -31,6 +35,7 @@ const Greeting = () => {
           </p>
 
           <p className="greeting greeting--name">
+            <TypingDots />
             <span className="greeting-text">
               {convertToLetters("I'm")}{" "}
               <b>

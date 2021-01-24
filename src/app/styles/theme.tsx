@@ -1,9 +1,9 @@
 const breakpoints = {
-	sm: 500,
-	md: 700,
-	lg: 1000,
-	xl: 1400,
-	xxl: 2000
+  sm: 500,
+  md: 700,
+  lg: 1000,
+  xl: 1400,
+  xxl: 2000
 };
 
 const theme = {
@@ -13,7 +13,7 @@ const theme = {
     accent: `rgba(0, 98, 255, 1)`,
     alt: `rgba(255, 12, 253, 1)`,
     orange: "#e35d5b",
-    gray: "#aaa"
+    gray: "#ddd"
   },
   breakpoints: Object.keys(breakpoints).reduce<{
     [k: string]: { up: string; down: string };
