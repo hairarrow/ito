@@ -1,13 +1,6 @@
 import { useEffect } from "react";
 import anime from "animejs";
 
-const greetingLetterIn = () => ({
-  opacity: 1,
-  translateY: [-16, 0],
-  duration: 200,
-  delay: anime.stagger(20)
-});
-
 const dotsScale = (parent: string) => ({
   targets: `${parent} .dot`,
   keyframes: [
@@ -37,102 +30,64 @@ export function useAnimation(ref: any) {
     anime
       .timeline({
         easing: "easeOutExpo",
-        duration: 200
-      })
-      .add({
-        ...dotsScale(".greeting--hello")
-      })
-      .add({
-        targets: ".greeting--hello",
-        opacity: 0,
+        duration: 200,
+        begin() {
+          console.time("anim");
+        },
         complete() {
-          toggleTypingStatus(".greeting--hello");
-          toggleTypingStatus(".greeting--name");
+          console.timeEnd("anim");
         }
       })
       .add({
-        targets: ".greeting--hello",
-        translateY: "0%",
-        duration: 0
-      })
-      .add({
-        targets: ".greeting--hello",
-        opacity: 1,
-        translateY: ["100%", "0%"],
-        duration: 400
+        targets: ".greeting--name",
+        translateY: ["-100%", "0%"],
+        opacity: 1
       })
       .add(
         {
-          targets: ".greeting--hello .greeting-text .letter",
-          ...greetingLetterIn()
+          ...dotsScale(".greeting--name")
         },
-        "-=200"
-      )
-      .add(
-        {
-          targets: ".greeting-wave",
-          opacity: 1,
-          rotateZ: [40, 0],
-          easing: "easeOutBack",
-          duration: 400
-        },
-        "-=200"
-      )
-      .add(
-        {
-          targets: ".greeting--name",
-          translateY: ["-100%", "0%"],
-          opacity: 1
-        },
-        "-=200"
+        "-=400"
       )
       .add({
-        ...dotsScale(".greeting--name")
+        targets: ".greeting--name",
+        opacity: 0,
+        duration: 80,
+        complete() {
+          toggleTypingStatus(".greeting--name");
+          document
+            .querySelector(".greeting--hello")
+            .classList.add("greeting--no-tail");
+        }
+      })
+      .add({
+        targets: ".greeting--name",
+        keyframes: [
+          { translateY: "100%", opacity: 0 },
+          { translateY: "0%", opacity: 1 }
+        ]
       })
       .add(
         {
-          targets: ".greeting--name",
-          opacity: 0,
-          complete() {
-            toggleTypingStatus(".greeting--name");
-            setTimeout(() => {
-              document
-                .querySelector(".greeting--hello")
-                .classList.add("greeting--no-tail");
-            }, 100);
-          }
-        },
-        "-=500"
-      )
-      .add(
-        {
-          targets: ".greeting--name",
-          keyframes: [
-            { translateY: "100%", opacity: 0 },
-            { translateY: "0%", opacity: 1 }
-          ],
-          duration: 400,
-          complete() {}
-        },
-        "-=300"
-      )
-      .add(
-        {
-          targets: ".greeting--name .greeting-text .letter",
+          targets: ".greeting--name .greeting-text",
           opacity: 1,
           duration: 20
         },
         "-=80"
       )
+      .add({
+        targets: [".lead", ".bt-1"],
+        opacity: 1,
+        duration: 400
+      })
       .add(
         {
-          targets: [".lead", ".bt-1", ".featured", ".featured-item"],
+          targets: [".featured", ".featured-item"],
           opacity: 1,
           translateY: ["100%", "0%"],
-          delay: anime.stagger(54),
-          duration: 800
+          duration: 400
         },
-        "+=200"
+        "-=400"
       );
 
     return;

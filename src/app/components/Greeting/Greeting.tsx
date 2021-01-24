@@ -1,7 +1,6 @@
 import { useRef, useContext } from "react";
 import StyledGreeting from "./Greeting.styles";
 import { useAnimation } from "./Greeting.animation";
-import convertToLetters from "../convertToLetters";
 import FEATURED_WORK from "./FEATURED_WORK";
 import { ContactContext } from "../Contact/Contact.context";
 import Button from "../Button";
@@ -25,25 +24,20 @@ const Greeting = () => {
     <StyledGreeting ref={containerRef}>
       <section className="container">
         <header className="greeting-container contained">
-          <p
-            className="greeting greeting--hello greeting--typing"
-            aria-label="Hey"
-          >
+          <p className="greeting greeting--hello" aria-label="Hey">
             <TypingDots />
-            <span className="greeting-text">{convertToLetters("Hey!")}</span>
+            <span className="greeting-text">Hey!</span>
 
             <span role="img" aria-label="wave" className="greeting-wave">
               👋
             </span>
           </p>
 
-          <p className="greeting greeting--name">
+          <p className="greeting greeting--name greeting--typing">
             <TypingDots />
             <span className="greeting-text">
-              {convertToLetters("I'm")}{" "}
-              <b>
-                {convertToLetters("Emmanuel")} {convertToLetters("Herrero")}
-              </b>
+              I'm&nbsp;
+              <b>Emmanuel Herrero</b>
             </span>
           </p>
         </header>
@@ -94,7 +88,7 @@ const Greeting = () => {
                       href={url}
                       className="featured-item-link"
                     >
-                      Open
+                      Product Page
                     </a>
                   </div>
 

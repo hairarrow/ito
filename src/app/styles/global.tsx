@@ -13,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
         @media (prefers-color-scheme: dark) {
             --bg-color: #000;
             --fg-color: ${theme.colors.bg};
-            --gray: #888;
+            --gray: #666;
         }
     }
 

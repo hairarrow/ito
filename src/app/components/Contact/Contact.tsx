@@ -100,70 +100,74 @@ const Contact = () => {
       ref={containerRef}
       className={`msg ${showMessage ? "msg--open" : ""}`}
       aria-hidden={!showMessage}
+      data-background-click="enabled"
+      title="Cancel"
     >
       <section>
-        <button className="cancel" onClick={toggle}>
-          Cancel
-        </button>
-        <h1 className="title">Say hello</h1>
-        <form ref={formRef} className="form" onSubmit={handleSubmit}>
-          <label
-            className={`send-container ${
-              Object.keys(valid).every((key) => valid[key])
-                ? "send-container--valid"
-                : ""
-            } ${loading ? "send-container--loading" : ""}`}
-          >
-            <span className="send-label">Send</span>
-            <input type="submit" value="Send" />
-          </label>
-          <label htmlFor="msg_to" className="label--disabled">
-            <span>To:</span>
-            <input
-              id="msg_to"
-              type="email"
-              name="email"
-              value={PERSONAL_EMAIL}
-              disabled
+        <dialog>
+          <button className="cancel" onClick={toggle}>
+            Cancel
+          </button>
+          <h1 className="title">Say hello</h1>
+          <form ref={formRef} className="form" onSubmit={handleSubmit}>
+            <label
+              className={`send-container ${
+                Object.keys(valid).every((key) => valid[key])
+                  ? "send-container--valid"
+                  : ""
+              } ${loading ? "send-container--loading" : ""}`}
+            >
+              <span className="send-label">Send</span>
+              <input type="submit" value="Send" />
+            </label>
+            <label htmlFor="msg_to" className="label--disabled">
+              <span>To:</span>
+              <input
+                id="msg_to"
+                type="email"
+                name="email"
+                value={PERSONAL_EMAIL}
+                disabled
+              />
+            </label>{" "}
+            <label htmlFor="msg_email" className="required">
+              <span>From:</span>
+              <input
+                value={fields.fromEmail}
+                id="msg_email"
+                type="email"
+                name="email"
+                placeholder="ryan@email.com"
+                required
+                onChange={handleChangeEmail}
+              />
+            </label>
+            <label htmlFor="msg_subject">
+              <span>Subject:</span>
+              <input
+                id="msg_subject"
+                type="text"
+                name="subject"
+                value={fields.subject}
+                onChange={handleChangeSubject}
+              />
+            </label>
+            <label
+              htmlFor="msg_body"
+              aria-hidden="true"
+              style={{ display: "none" }}
+            >
+              Body:
+            </label>
+            <textarea
+              onChange={handleChangeMessage}
+              id="msg_body"
+              name="body"
+              placeholder="Message"
+              value={fields.msg}
             />
-          </label>{" "}
-          <label htmlFor="msg_email" className="required">
-            <span>From:</span>
-            <input
-              value={fields.fromEmail}
-              id="msg_email"
-              type="email"
-              name="email"
-              placeholder="ryan@email.com"
-              required
-              onChange={handleChangeEmail}
-            />
-          </label>
-          <label htmlFor="msg_subject">
-            <span>Subject:</span>
-            <input
-              id="msg_subject"
-              type="text"
-              name="subject"
-              value={fields.subject}
-              onChange={handleChangeSubject}
-            />
-          </label>
-          <label
-            htmlFor="msg_body"
-            aria-hidden="true"
-            style={{ display: "none" }}
-          >
-            Body:
-          </label>
-          <textarea
-            onChange={handleChangeMessage}
-            id="msg_body"
-            name="body"
-            placeholder="Message"
-            value={fields.msg}
-          />
-        </form>
+          </form>
+        </dialog>
       </section>
     </StyledContact>
   );

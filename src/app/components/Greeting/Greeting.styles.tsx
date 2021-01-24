@@ -114,7 +114,6 @@ const StyledGreeting = styled.article`
     &--no-tail {
       &:before {
         opacity: 0;
-        transition: opacity 120ms linear;
       }
     }
 
@@ -126,23 +125,20 @@ const StyledGreeting = styled.article`
 
     &--name {
       z-index: 1;
+
+      .greeting-text {
+        opacity: 0;
+      }
     }
 
     &-text {
       font-weight: 300;
       color: #fff;
-
-      .letter {
-        display: inline-block;
-        line-height: 1;
-        opacity: 0;
-      }
     }
 
     &-wave {
       display: inline-block;
       padding-left: 8px;
-      opacity: 0;
     }
   }
 
