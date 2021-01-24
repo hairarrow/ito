@@ -1,25 +1,25 @@
 {
-	"hosting": {
-		"public": "dist",
-		"rewrites": [
-			{
-				"source": "**",
-				"destination": "/index.html"
-			}
-		],
-		"headers": {
-			"source": "**/*.@(svg|png|jpg|js|gif|jpeg)",
-			"headers": [
-				{
-					"key": "Cache-Control",
-					"value": "max-age=31536000"
-				}
-			]
-		},
-		"predeploy": "npm run build-public"
-	},
-	"firestore": {
-		"rules": "firestore.rules",
-		"indexes": "firestore.indexes.json"
-	}
+  "hosting": {
+    "public": "dist",
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ],
+    "headers": {
+      "source": "**/*.@(svg|png|jpg|js|gif|jpeg)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "max-age=31536000"
+        }
+      ]
+    },
+    "predeploy": "npm run build-public"
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  }
 }
