@@ -4,7 +4,7 @@ import anime from "animejs";
 const greetingLetterIn = () => ({
   opacity: 1,
   translateY: [-16, 0],
-  duration: 800,
+  duration: 200,
   delay: anime.stagger(20)
 });
 
@@ -37,25 +37,19 @@ export function useAnimation(ref: any) {
     anime
       .timeline({
         easing: "easeOutExpo",
-        duration: 420
+        duration: 200
       })
       .add({
         ...dotsScale(".greeting--hello")
       })
       .add({
-        ...dotsScale(".greeting--hello")
+        targets: ".greeting--hello",
+        opacity: 0,
+        complete() {
+          toggleTypingStatus(".greeting--hello");
+          toggleTypingStatus(".greeting--name");
+        }
       })
-      .add(
-        {
-          targets: ".greeting--hello",
-          opacity: 0,
-          duration: 300,
-          complete() {
-            toggleTypingStatus(".greeting--hello");
-          }
-        },
-        "-=600"
-      )
       .add({
         targets: ".greeting--hello",
         translateY: "0%",
@@ -65,14 +59,14 @@ export function useAnimation(ref: any) {
         targets: ".greeting--hello",
         opacity: 1,
         translateY: ["100%", "0%"],
-        duration: 600
+        duration: 400
       })
       .add(
         {
           targets: ".greeting--hello .greeting-text .letter",
           ...greetingLetterIn()
         },
-        "-=500"
+        "-=200"
       )
       .add(
         {
@@ -80,19 +74,18 @@ export function useAnimation(ref: any) {
           opacity: 1,
           rotateZ: [40, 0],
           easing: "easeOutBack",
-          duration: 500,
-          complete() {
-            toggleTypingStatus(".greeting--name");
-          }
+          duration: 400
         },
-        "-=800"
+        "-=200"
       )
-      .add({
-        targets: ".greeting--name",
-        translateY: ["-100%", "0%"],
-        opacity: 1
-      })
-      .add({ ...dotsScale(".greeting--name") }, "-=400")
+      .add(
+        {
+          targets: ".greeting--name",
+          translateY: ["-100%", "0%"],
+          opacity: 1
+        },
+        "-=200"
+      )
       .add({
         ...dotsScale(".greeting--name")
       })
@@ -106,10 +99,10 @@ export function useAnimation(ref: any) {
               document
                 .querySelector(".greeting--hello")
                 .classList.add("greeting--no-tail");
-            }, 300);
+            }, 100);
           }
         },
-        "-=200"
+        "-=500"
       )
       .add(
         {
@@ -118,26 +111,28 @@ export function useAnimation(ref: any) {
             { translateY: "100%", opacity: 0 },
             { translateY: "0%", opacity: 1 }
           ],
-          duration: 800
+          duration: 400,
+          complete() {}
         },
-        "-=200"
+        "-=300"
       )
       .add(
         {
           targets: ".greeting--name .greeting-text .letter",
-          ...greetingLetterIn()
+          opacity: 1,
+          duration: 20
         },
-        "-=200"
+        "-=80"
       )
       .add(
         {
           targets: [".lead", ".bt-1", ".featured", ".featured-item"],
           opacity: 1,
           translateY: ["100%", "0%"],
-          delay: anime.stagger(64),
+          delay: anime.stagger(54),
           duration: 800
         },
-        "-=800"
+        "+=200"
       );
 
     return;
