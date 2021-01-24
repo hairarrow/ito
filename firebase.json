@@ -16,7 +16,7 @@
         }
       ]
     },
-    "predeploy": "npm run build-public"
+    "predeploy": "yarn build-public"
   },
   "firestore": {
     "rules": "firestore.rules",
