@@ -30,13 +30,7 @@ export function useAnimation(ref: any) {
 
     anime
       .timeline({
-        easing: "easeOutExpo",
-        begin() {
-          console.time("anim");
-        },
-        complete() {
-          console.timeEnd("anim");
-        }
+        easing: "easeOutExpo"
       })
       .add({
         targets: ".greeting--name",
