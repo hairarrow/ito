@@ -26,9 +26,19 @@ const Contact = () => {
   const [fields, setFields] = useState(defaultFields);
   const [valid, setValid] = useState(defaultValid);
   const [loading, setLoading] = useState(false);
+  const [displayContainer, setDisplayContainer] = useState(showMessage);
   const analytics = useAnalytics();
 
-  useAnimation(containerRef, showMessage);
+  useAnimation(
+    containerRef,
+    showMessage,
+    () => {
+      setDisplayContainer(true);
+    },
+    () => {
+      setDisplayContainer(showMessage);
+    }
+  );
 
   const toggle = () => {
     dispatch({ type: "UpdateShowMessage", value: false });
@@ -80,7 +90,6 @@ const Contact = () => {
 
   const handleClick = (e: any) => {
     if (formRef.current.contains(e.target)) {
-      console.log("inside");
     } else toggle();
   };
 
@@ -98,8 +107,8 @@ const Contact = () => {
   return (
     <StyledContact
       ref={containerRef}
-      className={`msg ${showMessage ? "msg--open" : ""}`}
-      aria-hidden={!showMessage}
+      className={`msg ${displayContainer ? "msg--open" : ""}`}
+      aria-hidden={!displayContainer}
       data-background-click="enabled"
       title="Cancel"
     >

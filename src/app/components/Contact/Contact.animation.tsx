@@ -1,7 +1,12 @@
 import { useEffect, useState } from "react";
 import anime from "animejs";
 
-export default function useAnimation(ref: any, open = false) {
+export default function useAnimation(
+  ref: any,
+  open = false,
+  onBegin = () => null,
+  onComplete = () => null
+) {
   const [play, setPlay] = useState(false);
   useEffect(() => {
     let opacity: number | number[] = [0, 1];
@@ -15,7 +20,9 @@ export default function useAnimation(ref: any, open = false) {
     anime
       .timeline({
         direction,
-        easing: "easeOutCirc"
+        easing: "easeOutCirc",
+        begin: onBegin,
+        complete: onComplete
       })
       .add({
         targets: ".msg",

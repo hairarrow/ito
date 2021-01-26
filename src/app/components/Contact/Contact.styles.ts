@@ -14,6 +14,7 @@ const Styled = styled.section`
 
   &:not(.msg--open) {
     pointer-events: none;
+    display: none;
   }
 
   @media (prefers-color-scheme: dark) {
