@@ -18,6 +18,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@react-hook/intersection-observer": "^3.1.1",
     "animejs": "^3.2.1",
     "firebase": "^8.2.4",
     "lodash": "^4.17.20",
