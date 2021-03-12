@@ -36,11 +36,12 @@ export function useAnimation(ref: any) {
         targets: ".greeting--name",
         translateY: ["-100%", "0%"],
         opacity: 1,
+        duration: 200,
         complete() {
           anime({
             targets: ".greeting--name .dot",
             keyframes: [{ scale: 1 }, { scale: 1.4 }, { scale: 1 }],
-            duration: 800,
+            duration: 600,
             delay: anime.stagger(80),
             easing: "easeInOutCubic",
             loop: 2
@@ -58,13 +59,13 @@ export function useAnimation(ref: any) {
               .classList.add("greeting--no-tail");
           }
         },
-        "+=1400"
+        "+=600"
       )
       .add({
         targets: ".greeting--name",
         translateY: ["100%", "0%"],
         opacity: 1,
-        duration: 420,
+        duration: 280,
         complete() {}
       })
       .add(
@@ -74,12 +75,7 @@ export function useAnimation(ref: any) {
           complete() {
             anime({
               easing: "easeOutExpo",
-              targets: ".lead",
-              opacity: 1
-            });
-            anime({
-              easing: "easeOutExpo",
-              targets: [".featured", ".featured-item"],
+              targets: [".lead", ".featured", ".featured-item"],
               translateY: ["100%", "0%"],
               opacity: 1,
               complete() {
@@ -96,62 +92,5 @@ export function useAnimation(ref: any) {
         "-=500"
       )
       .add({});
-
-    return;
-    anime
-      .timeline({
-        easing: "easeOutExpo",
-        duration: 200
-      })
-      .add({
-        targets: ".greeting--name",
-        translateY: ["-100%", "0%"],
-        opacity: 1
-      })
-      .add(
-        {
-          ...dotsScale(".greeting--name")
-        },
-        "-=400"
-      )
-      .add({
-        targets: ".greeting--name",
-        opacity: 0,
-        duration: 80,
-        complete() {
-          toggleTypingStatus(".greeting--name");
-        }
-      })
-      .add({
-        targets: ".greeting--name",
-        keyframes: [
-          { translateY: "100%", opacity: 0 },
-          { translateY: "0%", opacity: 1 }
-        ]
-      })
-      .add(
-        {
-          targets: ".greeting--name .greeting-text",
-          opacity: 1,
-          duration: 20
-        },
-        "-=80"
-      )
-      .add({
-        targets: [".lead", ".bt-1"],
-        opacity: 1,
-        duration: 400
-      })
-      .add(
-        {
-          targets: [".featured", ".featured-item"],
-          opacity: 1,
-          translateY: ["100%", "0%"],
-          duration: 400
-        },
-        "-=400"
-      );
-
-    return;
   }, [ref]);
 }
