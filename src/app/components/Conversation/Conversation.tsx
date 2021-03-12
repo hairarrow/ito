@@ -2,7 +2,6 @@ import useIntersectionObserver from "@react-hook/intersection-observer";
 import { useEffect, useRef, useState } from "react";
 import Message from "./Message";
 import ConversationStyles from "./Conversation.styles";
-// import useScrollPosition from "../../hooks/useScrollPosition";
 import useAnimation from "./Conversation.animation";
 
 const Conversation = () => {
@@ -10,7 +9,6 @@ const Conversation = () => {
   const [hasPlayed, setHasPlayed] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const { isIntersecting } = useIntersectionObserver(containerRef);
-  console.log(isIntersecting);
   useAnimation(containerRef, hasPlayed);
 
   useEffect(() => {
