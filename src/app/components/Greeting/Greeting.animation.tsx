@@ -1,18 +1,6 @@
 import { useEffect } from "react";
 import anime from "animejs";
 
-const dotsScale = (parent: string) => ({
-  targets: `${parent} .dot`,
-  keyframes: [
-    { scale: 1, backgroundColor: "rgba(0,0,0,0.1)" },
-    { scale: 1.2, backgroundColor: "rgba(0,0,0,0.4)" },
-    { scale: 1, backgroundColor: "rgba(0,0,0,0.1)" }
-  ],
-  duration: 800,
-  delay: anime.stagger(160),
-  easing: "easeInOutCubic"
-});
-
 function toggleTypingStatus(className: string) {
   const { classList } = document.querySelector(className);
   const typingClass = "greeting--typing";
