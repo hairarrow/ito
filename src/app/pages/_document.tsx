@@ -4,7 +4,7 @@ import { ServerStyleSheet } from "styled-components";
 export const META = {
   title: "Emmanuel Herrero: Designer & Full-stack Developer",
   description:
-    "I'm a designer and & full-stack developer based in Los Angeles specializing in simplicity, scalability, & data-driven design solutions built for growth.",
+    "I'm a designer & full-stack developer in Los Angeles specializing in simplicity, scalability, & data-driven design solutions built for growth.",
   img: "https://hairarrow.dev/smshare.jpg",
   url: "https://hairarrow.dev"
 };
