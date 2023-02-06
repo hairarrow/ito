@@ -18,13 +18,14 @@ export function useAnimation(ref: any) {
 
     anime
       .timeline({
-        easing: "easeOutExpo"
+        easing: "easeOutExpo",
       })
       .add({
         targets: ".greeting--name",
         translateY: ["-100%", "0%"],
         opacity: 1,
         duration: 200,
+        delay: 1000,
         complete() {
           anime({
             targets: ".greeting--name .dot",
@@ -32,9 +33,9 @@ export function useAnimation(ref: any) {
             duration: 600,
             delay: anime.stagger(80),
             easing: "easeInOutCubic",
-            loop: 2
+            loop: 2,
           });
-        }
+        },
       })
       .add(
         {
@@ -45,7 +46,7 @@ export function useAnimation(ref: any) {
             document
               .querySelector(".greeting--hello")
               .classList.add("greeting--no-tail");
-          }
+          },
         },
         "+=600"
       )
@@ -54,7 +55,7 @@ export function useAnimation(ref: any) {
         translateY: ["100%", "0%"],
         opacity: 1,
         duration: 280,
-        complete() {}
+        complete() {},
       })
       .add(
         {
@@ -71,11 +72,11 @@ export function useAnimation(ref: any) {
                   targets: ".bt-1",
                   rotateZ: [20, 0],
                   translateY: ["200%", "0%"],
-                  opacity: 1
+                  opacity: 1,
                 });
-              }
+              },
             });
-          }
+          },
         },
         "-=500"
       )

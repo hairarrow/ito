@@ -26,7 +26,7 @@ const Greeting = () => {
         <header className="greeting-container contained">
           <p className="greeting greeting--hello" aria-label="Hey">
             <TypingDots />
-            <span className="greeting-text">Hey!</span>
+            <span className="greeting-text">Hey! I'm Emmanuel Herrero</span>
 
             <span role="img" aria-label="wave" className="greeting-wave">
               👋
@@ -36,8 +36,10 @@ const Greeting = () => {
           <p className="greeting greeting--name greeting--typing">
             <TypingDots />
             <span className="greeting-text">
-              I'm&nbsp;
-              <b>Emmanuel Herrero</b>
+              I'm an engineering manager at&nbsp;
+              <a href="//volleythat.com" target="_blank">
+                Volley
+              </a>
             </span>
           </p>
         </header>
@@ -46,19 +48,18 @@ const Greeting = () => {
           className="lead contained"
           aria-label="I build thoughtful experiences powered by code"
         >
-          I build thoughtful experiences <br />
-          powered by code
+          Thoughtful Digital Experiences Tailored for Growth
         </p>
 
         <p className="lead lead--sub contained">
-          I'm a <b>designer &amp; full-stack developer</b> based in Los Angeles
-          specializing in simplicity, scalability, &amp; data-driven design
-          solutions built for growth.
+          As a designer &amp; full-stack developer based in California, I craft
+          simple, scalable, and data-driven solutions to drive growth and
+          enhance user experience.
         </p>
 
         <span className="button-container">
           <Button className="bt-1" onClick={toggleMsg}>
-            Say Hello
+            Get in Touch
           </Button>
         </span>
       </section>

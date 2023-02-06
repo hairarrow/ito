@@ -27,7 +27,7 @@ const Conversation = () => {
         So, what do you actually do?
       </Message>
       <Message className="cm-2" title="I craft powerful digital experiences">
-        I have over 8 years of experience working across a variety of
+        I have over 10 years of experience working across a variety of
         industries. Whether I'm building for small business or a Fortune 500, I
         craft high performing experiences that value simplicity and prioritize
         accessibility beyond the bare minimum that is unfortunately common

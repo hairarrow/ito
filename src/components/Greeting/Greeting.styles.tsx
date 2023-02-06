@@ -32,18 +32,21 @@ const StyledGreeting = styled.article`
   .greeting {
     margin-bottom: 0;
     position: relative;
-    display: inline-block;
-    min-height: 48px;
+    padding-top: 4px;
+    padding-bottom: 4px;
     padding-left: 16px;
     padding-right: 16px;
-    font-size: 24px;
-    line-height: 48px;
+    font-size: 18px;
+    line-height: 28px;
     border-radius: 20px;
-    white-space: nowrap;
     background: var(--accent);
     opacity: 0;
     transform-origin: bottom left;
     transition: background 320ms ease-out;
+
+    a {
+      color: inherit;
+    }
 
     .typing-dots {
       opacity: 0;
@@ -51,6 +54,7 @@ const StyledGreeting = styled.article`
 
     &--typing {
       width: 80px;
+      height: 36px;
       background: var(--gray);
 
       .typing-dots {
@@ -121,6 +125,8 @@ const StyledGreeting = styled.article`
       margin-top: 5vh;
       z-index: 2;
       opacity: 1;
+      white-space: nowrap;
+      align-items: center;
     }
 
     &--name {
@@ -179,7 +185,6 @@ const StyledGreeting = styled.article`
       font-weight: 500;
       font-size: 14px;
       line-height: 28px;
-      max-width: 90%;
     }
 
     @media (${(props) => props.theme.breakpoints.sm.up}) {
@@ -188,6 +193,7 @@ const StyledGreeting = styled.article`
       &--sub {
         font-size: 16px;
         line-height: 36px;
+        max-width: 90%;
       }
     }
 
