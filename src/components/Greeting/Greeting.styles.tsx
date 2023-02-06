@@ -124,10 +124,49 @@ const StyledGreeting = styled.article`
     }
 
     &--name {
+      .stars {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: -1;
+        // transform: translate3d(0px, -38px, 0px) scale3d(1, 1, 1);
+
+        // .cross {
+        //   transform: translate3d(4px, -4px, 0px);
+        // }
+
+        // .triangle {
+        //   transform: translate3d(8px, 4px, 0px);
+        // }
+      }
       z-index: 1;
+      background: linear-gradient(
+        to left,
+        rgb(62, 25, 109),
+        rgb(62, 25, 109),
+        var(--accent),
+        var(--accent)
+      );
+      background-size: 400% 100%;
+
+      &:hover:not(.greeting--typing) {
+        background-size: 125% 100%;
+
+        a {
+          color: #ffec37;
+          text-decoration: underline;
+        }
+      }
 
       .greeting-text {
+        z-index: 1;
         opacity: 0;
+
+        a {
+          color: inherit;
+          font-weight: 400;
+          text-decoration: none;
+        }
       }
     }
 
@@ -154,6 +193,7 @@ const StyledGreeting = styled.article`
     display: flex;
     padding-left: 12px;
     padding-right: 12px;
+    pointer-events: none;
 
     .dot {
       display: inline-block;

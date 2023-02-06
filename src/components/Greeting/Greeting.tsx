@@ -26,19 +26,47 @@ const Greeting = () => {
         <header className="greeting-container contained">
           <p className="greeting greeting--hello" aria-label="Hey">
             <TypingDots />
-            <span className="greeting-text">Hey!</span>
-
+            <span className="greeting-text">Hey, I'm Emmanuel Herrero</span>
             <span role="img" aria-label="wave" className="greeting-wave">
               👋
             </span>
           </p>
 
           <p className="greeting greeting--name greeting--typing">
-            <TypingDots />
             <span className="greeting-text">
-              I'm&nbsp;
-              <b>Emmanuel Herrero</b>
+              I'm an engineering manager at{" "}
+              <a
+                href="https://www.volleythat.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Volley
+              </a>
+              <div
+                className="stars"
+                // style="transform: translate3d(0px, 10px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; opacity: 0;"
+              >
+                <img
+                  src="https://assets.website-files.com/61c070585317d242d3a59789/61c070585317d21de3a597da_Circle.svg"
+                  loading="lazy"
+                  alt=""
+                  className="circle"
+                />
+                <img
+                  src="https://assets.website-files.com/61c070585317d242d3a59789/61c070585317d2ae67a597d8_Cross.svg"
+                  loading="lazy"
+                  alt=""
+                  className="cross"
+                />
+                <img
+                  src="https://assets.website-files.com/61c070585317d242d3a59789/61c070585317d29fada597d9_Triangle.svg"
+                  loading="lazy"
+                  alt=""
+                  className="triangle"
+                />
+              </div>
             </span>
+            <TypingDots />
           </p>
         </header>
 
