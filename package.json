@@ -7,12 +7,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "export": "rm -rf src/app/.next out && yarn build && next export \"src/app\" -o \"dist\"",
-    "prebuild-public": "yarn export",
-    "build-public": "cpx \"src/app/public/**/*.*\" \"dist\"",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "rimraf \"dist\"",
-    "deploy": "firebase deploy --only hosting"
+    "test": "next build"
   },
   "keywords": [],
   "author": "",
