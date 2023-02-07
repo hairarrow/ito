@@ -89,7 +89,7 @@ const Greeting = () => {
                       href={url}
                       className="featured-item-link"
                     >
-                      Product Page
+                      Visit Page
                     </a>
                   </div>
 
