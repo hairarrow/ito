@@ -35,7 +35,7 @@ const SERVICES = [
     id: "tech",
     title: "Technology",
     description:
-      "I have over 8 years of experience building accessible and ADA-compliant websites and applications and services for a wide range of clients – including B2B, B2C, financial, mar-tech, and e-commerce – using platforms and technologies including Shopify, Stripe, Plaid, Node, React, GraphQL, and more.",
+      "I have over 10 years of experience building accessible and ADA-compliant websites and applications and services for a wide range of clients – including B2B, B2C, financial, mar-tech, and e-commerce – using platforms and technologies including Shopify, Stripe, Plaid, Node, React, GraphQL, and more.",
     tags: [
       "SOLID Code",
       "Domain-Driven Design",
@@ -54,8 +54,8 @@ const SERVICES = [
       "Marketing Technology",
       "Server-Side Rendering",
       "Mobile and Web",
-      "Search"
-    ]
+      "Search",
+    ],
   },
   {
     id: "design",
@@ -74,14 +74,14 @@ const SERVICES = [
       "High Fidelity Prototypes",
       "Sketch",
       "Adobe CS",
-      "Origami"
-    ]
+      "Origami",
+    ],
   },
   {
     id: "access",
     title: "Accessibility",
     description:
-      "I've been building accessible, high-performing websites for over 9 years. Accessibility is incredibly important for me in everything I do. The purpose of the digital platforms I build for is to break barriers and help more people communicate effectively. It is unacceptable that millions of people around the world have to go through a web that makes them feel invisible. Accessible websites improve user experience, protect you from lawsuits, open new markets.",
+      "I've been building accessible, high-performing websites for over 10 years. Accessibility is incredibly important for me in everything I do. The purpose of the digital platforms I build for is to break barriers and help more people communicate effectively. It is unacceptable that millions of people around the world have to go through a web that makes them feel invisible. Accessible websites improve user experience, protect you from lawsuits, open new markets.",
     tags: [
       "AATT (Automated Accessibility Testing Tool)",
       "A11Y",
@@ -89,8 +89,8 @@ const SERVICES = [
       "Checklist",
       "Code Linting for Accessibility Problems",
       "Aria-*",
-      "HTML 5"
-    ]
+      "HTML 5",
+    ],
   },
   {
     id: "analytics",
@@ -107,9 +107,9 @@ const SERVICES = [
       "Customer Segmentation",
       "A/B Test Design",
       "Mutivariate Test Design",
-      "Data Visualization"
-    ]
-  }
+      "Data Visualization",
+    ],
+  },
 ];
 
 export default Services;
