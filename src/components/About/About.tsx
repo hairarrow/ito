@@ -35,7 +35,7 @@ const About = () => {
           generalist with many interests, brief obsessions, but no single
           passion. That changed after I committed to teaching myself to code.
           Programming was a hobby but as I learned, I realized I could channel a
-          lot of what interested me in into this single skill. 8 years later,
+          lot of what interested me in into this single skill. 10 years later,
           I’m still a generalist but now that’s my greatest asset. I’ve found my
           passion in synthesizing many disciplines to end up with a cohesive,
           detail-oriented project driven by objectives, data and results.
