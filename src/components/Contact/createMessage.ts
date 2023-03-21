@@ -35,7 +35,7 @@ const createMessage = async ({
 }: INewMessageRaw) => {
   const sanitizedMessage: INewMessage = {
     from,
-    message: { text, subject: `[ITOLEAD] ${subject}` },
+    message: { text, subject: `[ITOLEAD] ${from} – ${subject}` },
   };
 
   return onCreateMessage(sanitizedMessage);
