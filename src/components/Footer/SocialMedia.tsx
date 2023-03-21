@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 const SOCIAL_MEDIA = [
-  // {
-  //   name: "Linked In",
-  //   icon: "/linkedin.svg",
-  //   href: "//linkedin.com/in/hairarrow",
-  // },
+  {
+    name: "Linked In",
+    icon: "/linkedin.svg",
+    href: "//linkedin.com/in/hairarrow",
+  },
   {
     name: "Github",
     icon: "/github.svg",

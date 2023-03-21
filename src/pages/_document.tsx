@@ -5,15 +5,15 @@ export const META = {
   title: "Emmanuel Herrero: Designer & Full-stack Developer",
   description:
     "I'm a designer & full-stack developer in Los Angeles specializing in simplicity, scalability, & data-driven design solutions built for growth.",
-  img: "https://hairarrow.dev/smshare.jpg",
-  url: "https://hairarrow.dev"
+  img: "https://herrero.io/smshare.jpg",
+  url: "https://herrero.io",
 };
 
 const meta_map = {
   title: ["og:title", "twitter:title"],
   description: ["description", "og:description", "twitter:description"],
   img: ["og:image", "twitter:image"],
-  url: ["og:url"]
+  url: ["og:url"],
 };
 
 export default class MyDocument extends Document {
@@ -25,7 +25,7 @@ export default class MyDocument extends Document {
       ctx.renderPage = () =>
         originalRenderPage({
           enhanceApp: (App) => (props) =>
-            sheet.collectStyles(<App {...props} />)
+            sheet.collectStyles(<App {...props} />),
         });
 
       const initialProps = await Document.getInitialProps(ctx);
@@ -36,7 +36,7 @@ export default class MyDocument extends Document {
             {initialProps.styles}
             {sheet.getStyleElement()}
           </>
-        )
+        ),
       };
     } finally {
       sheet.seal();

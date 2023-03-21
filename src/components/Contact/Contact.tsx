@@ -5,23 +5,23 @@ import useAnimation from "./Contact.animation";
 import createMessage from "./createMessage";
 import useAnalytics from "../../hooks/useAnalytics";
 
-const PERSONAL_EMAIL = "hello@hairarrow.dev";
+const PERSONAL_EMAIL = "emmanuel@herrero.io";
 
 const Contact = () => {
   const defaultFields = {
     msg: "",
     fromEmail: "",
-    subject: ""
+    subject: "",
   };
   const defaultValid = {
     email: false,
-    message: false
+    message: false,
   };
   const containerRef = useRef(null);
   const formRef = useRef(null);
   const {
     state: { showMessage },
-    dispatch
+    dispatch,
   } = useContext(ContactContext);
   const [fields, setFields] = useState(defaultFields);
   const [valid, setValid] = useState(defaultValid);
@@ -73,7 +73,7 @@ const Contact = () => {
   const handleChangeEmail = (e: ChangeEvent<HTMLInputElement>) => {
     const {
       validity: { valid: email },
-      value: fromEmail
+      value: fromEmail,
     } = e.currentTarget;
     setValid({ ...valid, email });
     setFields({ ...fields, fromEmail });
@@ -82,7 +82,7 @@ const Contact = () => {
   const handleChangeMessage = (e: ChangeEvent<HTMLTextAreaElement>) => {
     const {
       validity: { valid: message },
-      value: msg
+      value: msg,
     } = e.currentTarget;
     setValid({ ...valid, message });
     setFields({ ...fields, msg });
