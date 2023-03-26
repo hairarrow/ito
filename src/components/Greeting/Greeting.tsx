@@ -35,16 +35,7 @@ const Greeting = () => {
 
           <p className="greeting greeting--name greeting--typing">
             <TypingDots />
-            <span className="greeting-text">
-              I'm an engineering manager at&nbsp;
-              <a
-                href="//volleythat.com"
-                target="_blank"
-                style={{ position: "relative" }}
-              >
-                Volley
-              </a>
-            </span>
+            <span className="greeting-text">I build things with code</span>
           </p>
         </header>
 
