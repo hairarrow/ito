@@ -11,10 +11,14 @@ const Styled = styled.section`
   color: var(--bg-color);
   backdrop-filter: blur(40px) brightness(33%) saturate(120%);
   opacity: 0;
+  display: none;
 
   &:not(.msg--open) {
     pointer-events: none;
-    display: none;
+  }
+
+  &.msg--open {
+    display: unset;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -27,6 +31,24 @@ const Styled = styled.section`
     margin: auto auto;
     position: relative;
     z-index: 1;
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes pulse {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.6;
+    }
   }
 
   .title {
@@ -57,6 +79,7 @@ const Styled = styled.section`
   }
 
   .form {
+    position: relative;
     display: flex;
     flex-direction: column;
     background: #fff;
@@ -69,6 +92,28 @@ const Styled = styled.section`
     @media (prefers-color-scheme: dark) {
       background: rgba(255, 255, 255, 0.1);
     }
+
+    &--success {
+      .success-container {
+        display: flex;
+        opacity: 0;
+        animation: fade-in 0.2s ease-out forwards;
+        animation-delay: 0.2s;
+      }
+
+      .form-fields {
+        opacity: 0 !important;
+        transition: opacity 0.2s ease-out;
+      }
+    }
+  }
+
+  .b-bottom {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+    @media (prefers-color-scheme: dark) {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
   }
 
   label {
@@ -76,11 +121,6 @@ const Styled = styled.section`
     grid-template-columns: auto 1fr;
     align-items: center;
     padding: 8px 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-
-    @media (prefers-color-scheme: dark) {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
 
     &.required span:after {
       content: " *";
@@ -121,6 +161,45 @@ const Styled = styled.section`
     }
   }
 
+  .send-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 4px;
+    filter: grayscale(100%) brightness(1.2);
+    opacity: 0.6;
+    transition: filter 120ms ease-out;
+
+    label {
+      padding: 0 2px 0 12px;
+      border-radius: 12px;
+      background-color: var(--accent);
+      cursor: pointer;
+
+      &:hover {
+        filter: brightness(1.2);
+      }
+
+      span {
+        margin-right: 2px;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        background-color: rgba(255, 255, 255, 0.05);
+      }
+    }
+
+    &--valid {
+      filter: none;
+      opacity: 1;
+
+      label {
+        /* background-color: transparent; */
+        border-color: rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+
   input[type="submit"] {
     background-image: url("/arrow_up.svg");
     background-repeat: no-repeat;
@@ -131,28 +210,18 @@ const Styled = styled.section`
     width: 38px;
     border-radius: 38px;
     font-size: 0;
-    transition: transform 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
-  }
+    transform: scale(0.72) rotate(90deg);
+    filter: brightness(0) invert(1);
+    transition: all 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
 
-  .send-container:not(.send-container--valid) {
-    cursor: pointer;
-
-    .send-label {
-      transform: translateX(28px);
-      opacity: 0;
+    @media (prefers-reduced-motion) {
+      transform: scale(0.72) rotate(90deg) !important;
     }
-
-    input[type="submit"] {
-      opacity: 0.5;
-    }
-  }
-
-  .send-container--loading {
-    opacity: 0.2;
   }
 
   .send-label {
-    color: var(--accent);
+    /* color: var(--accent); */
+    color: #fff;
     font-weight: 700;
     transition: inherit;
     opacity: 1;
@@ -160,22 +229,49 @@ const Styled = styled.section`
       transform 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
 
-  .send-container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    transition: opacity 300ms ease-out;
+  textarea {
+    padding: 16px 0;
+    line-height: 1.6;
+  }
 
-    &--valid {
-      input[type="submit"] {
-        transform: rotate(90deg);
+  .success-container {
+    pointer-events: none;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    padding: 0 16px;
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+
+      h2 span {
+        margin-right: 8px;
+      }
+
+      h2,
+      p {
+        margin: 0;
+        text-align: center;
+        line-height: 1.4;
       }
     }
   }
 
-  textarea {
-    padding: 16px 0;
-    line-height: 1.6;
+  .pulse {
+    animation: pulse 0.8s ease-in-out infinite alternate;
+  }
+
+  .fade-out {
+    opacity: 0 !important;
+    transition: opacity 0.2s ease-out;
   }
 `;
 

@@ -22,26 +22,33 @@ export default function useAnimation(
         direction,
         easing: "easeOutCirc",
         begin: onBegin,
-        complete: onComplete
+        complete: onComplete,
       })
       .add({
         targets: ".msg",
-        duration: 120,
-        opacity
+        duration: 100,
+        opacity,
+        easing: "linear",
       })
       .add({
         targets: [".title", ".form"],
-        translateY: [100, 0],
-        duration: 180,
-        delay: anime.stagger(100),
-        opacity
+        translateY: [200, 0],
+        duration: open ? 140 : 100,
+        delay: anime.stagger(120),
+        opacity,
+      })
+      .add({
+        targets: ".form-fields",
+        opacity: [0, 1],
+        duration: open ? 200 : 100,
+        easing: "easeOutCubic",
       })
       .add(
         {
           targets: ".cancel",
-          duration: open ? 200 : 100,
+          duration: 100,
           opacity,
-          translateY: [-100, 0]
+          translateY: [-10, 0],
         },
         "-=180"
       );

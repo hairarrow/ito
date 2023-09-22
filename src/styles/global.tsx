@@ -30,6 +30,8 @@ const GlobalStyle = createGlobalStyle`
             transition: none !important;
             animation: none !important;
             scroll-behavior: auto !important;
+            transform: none !important;
+            opacity: 1 !important;
         }
     }
 
