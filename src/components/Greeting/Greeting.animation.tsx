@@ -25,7 +25,7 @@ export function useAnimation(ref: any) {
         translateY: ["-100%", "0%"],
         opacity: 1,
         duration: 200,
-        delay: 1000,
+        delay: 200,
         complete() {
           anime({
             targets: ".greeting--name .dot",
@@ -37,25 +37,21 @@ export function useAnimation(ref: any) {
           });
         },
       })
-      .add(
-        {
-          targets: ".greeting--name",
-          opacity: 0,
-          complete() {
-            toggleTypingStatus(".greeting--name");
-            document
-              .querySelector(".greeting--hello")
-              .classList.add("greeting--no-tail");
-          },
+      .add({
+        targets: ".greeting--name",
+        opacity: 0,
+        complete() {
+          toggleTypingStatus(".greeting--name");
+          document
+            .querySelector(".greeting--hello")
+            .classList.add("greeting--no-tail");
         },
-        "+=600"
-      )
+      })
       .add({
         targets: ".greeting--name",
         translateY: ["100%", "0%"],
         opacity: 1,
         duration: 280,
-        complete() {},
       })
       .add(
         {
@@ -67,19 +63,20 @@ export function useAnimation(ref: any) {
               targets: [".lead", ".featured", ".featured-item"],
               translateY: ["100%", "0%"],
               opacity: 1,
-              complete() {
-                anime({
-                  targets: ".bt-1",
-                  rotateZ: [20, 0],
-                  translateY: ["200%", "0%"],
-                  opacity: 1,
-                });
-              },
             });
           },
         },
-        "-=500"
+        "-=1200"
       )
-      .add({});
+      .add(
+        {
+          targets: ".bt-1",
+          rotateZ: [20, 0],
+          translateY: ["200%", "0%"],
+          opacity: 1,
+          easing: "easeOutBack",
+        },
+        "+=100"
+      );
   }, [ref]);
 }

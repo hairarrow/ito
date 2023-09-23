@@ -9,10 +9,9 @@ const FooterStyles = styled.footer`
   margin: auto;
 
   .message {
-    padding: 8px 24px;
-    line-height: 32px;
+    padding: 8px 16px;
     font-size: 18px;
-    font-weight: 500;
+    line-height: 1.4;
     opacity: 0;
 
     & + .message {

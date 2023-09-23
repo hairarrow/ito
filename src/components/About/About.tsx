@@ -28,7 +28,7 @@ const About = () => {
         <span className="ball" />
       </span>
       <article className="content-container">
-        <h1 className="content-title">About Me</h1>
+        <h2 className="content-title">About Me</h2>
         <p className="content">
           I started my career as a graphic designer with a background in
           marketing, a few design classes and a copy of Photoshop. I was a

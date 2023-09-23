@@ -60,7 +60,7 @@ const Greeting = () => {
       </section>
 
       <section className="featured">
-        <h1 className="featured-title">Featured Work</h1>
+        <h2 className="featured-title">Featured Work</h2>
 
         <span className="featured-container">
           {[...FEATURED_WORK].map(
@@ -68,7 +68,7 @@ const Greeting = () => {
               <article className="featured-item" key={company}>
                 <header className="featured-item-header">
                   <div className="featured-item-header-top-row">
-                    <h1 className="featured-item-header-company">
+                    <h3 className="featured-item-header-company">
                       {logo && (
                         <img
                           className="featured-item-logo"
@@ -77,7 +77,7 @@ const Greeting = () => {
                         />
                       )}
                       <span className="featured-item-cname">{company}</span>
-                    </h1>
+                    </h3>
                     <a
                       rel="noopener noreferrer"
                       target="_blank"

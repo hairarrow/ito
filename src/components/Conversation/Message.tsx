@@ -1,5 +1,6 @@
 import { FC } from "react";
 import styled from "styled-components";
+import cn from "clsx";
 
 const Message: FC<{
   children: string;
@@ -11,13 +12,15 @@ const Message: FC<{
 
   return (
     <MessageStyles
-      className={`message ${variant === "recep" ? "message--recep" : ""} ${
-        title ? "message--has-title" : ""
-      }
-             ${className ? className : ""}`}
+      className={cn(
+        "message",
+        variant === "recep" && "message--recep",
+        title && "message--has-title",
+        className
+      )}
     >
       <>
-        {title && <h1 className="message-title">{title}</h1>}
+        {title && <h2 className="message-title">{title}</h2>}
         {children}
       </>
     </MessageStyles>
@@ -27,10 +30,10 @@ const Message: FC<{
 const MessageStyles = styled.article`
   position: relative;
   display: inline-block;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: 16px;
+  padding-right: 16px;
   font-size: 18px;
-  line-height: 48px;
+  line-height: 40px;
   border-radius: 20px;
   background: var(--accent);
 
@@ -104,16 +107,16 @@ const MessageStyles = styled.article`
   }
 
   &.message--has-title {
-    font-size: 16px;
-    line-height: 28px;
-    padding: 16px 24px;
+    font-size: 18px;
+    line-height: 32px;
+    padding: 12px 16px;
 
     .message-title {
       font-size: 18px;
-      line-height: 42px;
+      /* line-height: 42px; */
 
       @media (${(props) => props.theme.breakpoints.sm.up}) {
-        font-size: 24px;
+        font-size: 21px;
       }
     }
   }

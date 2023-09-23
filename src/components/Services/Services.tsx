@@ -9,7 +9,7 @@ const Service = ({ id, title, description, tags }) => {
   useAnimation(containerRef, id);
   return (
     <article ref={containerRef} key={id} className={`service service--${id}`}>
-      <h1 className="service-title">{title}</h1>
+      <h2 className="service-title">{title}</h2>
       <p className="service-description">{description}</p>
       <ul className="service-tags">
         {tags.map((tag) => (

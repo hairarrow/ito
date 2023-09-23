@@ -156,9 +156,9 @@ const Contact = () => {
         >
           Cancel
         </button>
-        <h1 className={cn("title", showSuccess && "fade-out")} id="dialogTitle">
+        <h2 className={cn("title", showSuccess && "fade-out")} id="dialogTitle">
           Say hello
-        </h1>
+        </h2>
         <form
           ref={formRef}
           className={cn("form", showSuccess && "form--success")}

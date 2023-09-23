@@ -20,7 +20,7 @@ export default function useAnimation(
     anime
       .timeline({
         direction,
-        easing: "easeOutCirc",
+        easing: "easeOutQuint",
         begin: onBegin,
         complete: onComplete,
       })
@@ -33,9 +33,10 @@ export default function useAnimation(
       .add({
         targets: [".title", ".form"],
         translateY: [200, 0],
-        duration: open ? 140 : 100,
-        delay: anime.stagger(120),
+        duration: open ? 400 : 100,
+        delay: anime.stagger(20),
         opacity,
+        easing: "easeOutElastic(10, 1)",
       })
       .add({
         targets: ".form-fields",
@@ -46,11 +47,11 @@ export default function useAnimation(
       .add(
         {
           targets: ".cancel",
-          duration: 100,
+          duration: open ? 400 : 100,
           opacity,
           translateY: [-10, 0],
         },
-        "-=180"
+        "-=300"
       );
   }, [ref, open]);
 }

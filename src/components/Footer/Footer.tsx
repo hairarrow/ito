@@ -38,7 +38,7 @@ const Footer = () => {
                 .querySelector(".message--question")
                 .classList.add("message--no-tail");
             }, 200);
-          }
+          },
         })
         .add(
           { targets: ".ms-2", opacity: 1, translateY: ["-100%", "0%"] },
@@ -50,9 +50,9 @@ const Footer = () => {
             opacity: 1,
             translateY: ["100%", "0%"],
             delay: anime.stagger(80),
-            easing: "easeOutQuint"
+            easing: "easeOutQuint",
           },
-          "+=200"
+          "-=300"
         );
       setHasPlayed(true);
       cleanupScroll();
