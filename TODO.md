@@ -1,0 +1,4 @@
+- Update headers so we only have one h1
+- update padding for sms spoofs
+- get contact on its own route
+- do the contact form in a new route as it should be, but don't load anything new

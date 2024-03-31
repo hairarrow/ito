@@ -1,0 +1,58 @@
+{
+  "greeting": "Hello there! I'm Emmanuel Herrero",
+  "description": "I love building things with code",
+  "title": "Crafting Friendly and Impactful Digital Experiences for Growth",
+  "subtitle": "As a passionate designer & full-stack developer, I assist companies in creating thoughtful, scalable, and data-driven experiences that fuel growth.",
+  "cta": "Let's talk",
+  "visit": "Visit page",
+  "featuredTitle": "Featured work",
+  "featuredIn": "Featured in",
+  "featuredWork": {
+    "rg": {
+      "title": "Better ads, higher conversion rates, less time required",
+      "description": "Designed specifically for real estate agents, this tool automatically pulls data (like home listings, images, map views) from your website to generate the type of ads proven to produce the best results. Typical ads take 25 to 30 minutes to create and this tool made it so agents could create highly specific, targeted ads in under 3 minutes."
+    },
+    "joon": {
+      "title": "Seamless enterprise health and wellness benefits",
+      "description": "I led a pivot from a costly, traditional credit card product to a sustainable service model that doesn't require customers to change their behavior. I leveraged a serverless architecture and integrations with Plaid and Dwolla to process and classify thousands of daily customer transactions for automatic reimbursements."
+    }
+  },
+  "conversation": {
+    "question": "So, what do you actually do?",
+    "answer": {
+      "title": "I build powerful digital experiences",
+      "details": "I have over 10 years of experience working across a variety of industries. Whether I'm building for small business or a Fortune 500, I craft high performing experiences that value simplicity and prioritize accessibility beyond the bare minimum that is unfortunately common around the web."
+    }
+  },
+  "services": {
+    "technology": {
+      "title": "Technology",
+      "description": "I have over 10 years of experience building accessible and ADA-compliant websites and applications and services for a wide range of clients – including B2B, B2C, financial, mar-tech, and e-commerce – using platforms and technologies including Shopify, Stripe, Plaid, Node, React, GraphQL, and more."
+    },
+    "design": {
+      "title": "Design & Research",
+      "description": "Design is at the core of everything I do. I can help you communicate your brand through thoughtful, inventive, and effective design."
+    },
+    "accessibility": {
+      "title": "Accessibility",
+      "description": "I've been building accessible, high-performing websites for over 10 years. Accessibility is incredibly important for me in everything I do. The purpose of the digital platforms I build for is to break barriers and help more people communicate effectively. It is unacceptable that millions of people around the world have to go through a web that makes them feel invisible. Accessible websites improve user experience, protect you from lawsuits, open new markets."
+    },
+    "analytics": {
+      "title": "Analytics",
+      "description": "Great design is driven by great data. I make sure I understand business goals and that your digital strategy is aligned with business goals. Whenever changes are required, I strive to measure all changes and I'm ready to revert to previous changes to optimize for any required metrics. Insight driven updates that focus on highest value returns"
+    }
+  },
+  "about": {
+    "title": "About me",
+    "content": [
+      "I started my career as a graphic designer with a background in marketing, a few design classes and a copy of Photoshop. I was a generalist with many interests, brief obsessions, but no single passion. That changed after I committed to teaching myself to code.  Programming was a hobby but as I learned, I realized I could channel a lot of what interested me in into this single skill. 10 years later, I’m still a generalist but now that’s my greatest asset. I’ve found my passion in synthesizing many disciplines to end up with a cohesive, detail-oriented project driven by objectives, data and results.",
+      "I build software and web experiences that are both functional and beautiful without sacrificing one for the other. I’ve built for enterprise across the spectrum and no matter the scale of the project, my values are the same. I design to meet KPIs but I plan for scalability, for the user and for future developers too. My interest in accessibility really began as a quest to avoid preventable mistakes. Myopia is human but in code that can result in fatal oversight and developers have a particular responsibility to work hard to counter that. Empathy, knowing your user’s needs, is as important to success as knowing their motivations.",
+      "Whether I’m working solo or building a team, I aim to deliver products that meet client objectives with SOLID code practices and measured analytical design. I have experience in ad-tech, mar tech, fin-tech and e-commerce and I’ve found that whatever the industry, the key to a good product is knowing the business intimately. I strongly believe in empowering teams to evolve through code ownership, open communication, modeling agile methodologies and stressing industry-standard best practices are the ingredients for a great product and key to building a culture that will sustain it."
+    ]
+  },
+  "footer": {
+    "first": "Do you have an idea for a project, website, or something else exciting?",
+    "second": "Let's talk",
+    "cta": "Say hello"
+  }
+}

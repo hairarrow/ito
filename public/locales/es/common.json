@@ -1,0 +1,58 @@
+{
+  "greeting": "¡Hola! Soy Emmanuel Herrero",
+  "description": "Me encanta construir cosas con código",
+  "title": "Creando Experiencias Digitales Amigables e Impactantes para el Crecimiento",
+  "subtitle": "Como diseñador apasionado y desarrollador full-stack, ayudo a las empresas a crear experiencias reflexivas, escalables y basadas en datos que impulsan el crecimiento.",
+  "cta": "Hablemos",
+  "visit": "Visitar página",
+  "featuredTitle": "Trabajo destacado",
+  "featuredIn": "Destacado en",
+  "featuredWork": {
+    "rg": {
+      "title": "Mejores anuncios, tasas de conversión más altas, menos tiempo requerido",
+      "description": "Diseñado específicamente para agentes inmobiliarios, esta herramienta extrae automáticamente datos (como listados de casas, imágenes, vistas de mapas) de su sitio web para generar el tipo de anuncios que han demostrado producir los mejores resultados. Los anuncios típicos toman de 25 a 30 minutos en crear y esta herramienta permite a los agentes crear anuncios altamente específicos y dirigidos en menos de 3 minutos."
+    },
+    "joon": {
+      "title": "Beneficios de salud y bienestar empresarial sin problemas",
+      "description": "Lideré un cambio de un costoso producto de tarjeta de crédito tradicional a un modelo de servicio sostenible que no requiere que los clientes cambien su comportamiento. Aproveché una arquitectura sin servidor e integraciones con Plaid y Dwolla para procesar y clasificar miles de transacciones diarias de clientes para reembolsos automáticos."
+    }
+  },
+  "conversation": {
+    "question": "Entonces, ¿qué haces en realidad?",
+    "answer": {
+      "title": "Construyo experiencias digitales poderosas",
+      "details": "Tengo más de 10 años de experiencia trabajando en una variedad de industrias. Ya sea que esté construyendo para una pequeña empresa o una Fortune 500, creo experiencias de alto rendimiento que valoran la simplicidad y priorizan la accesibilidad más allá del mínimo básico que lamentablemente es común en la web."
+    }
+  },
+  "services": {
+    "technology": {
+      "title": "Tecnología",
+      "description": "Tengo más de 10 años de experiencia construyendo sitios web y aplicaciones accesibles y conformes con la ADA, y servicios para una amplia gama de clientes, incluyendo B2B, B2C, finanzas, mar-tech y e-commerce, utilizando plataformas y tecnologías como Shopify, Stripe, Plaid, Node, React, GraphQL y más."
+    },
+    "design": {
+      "title": "Diseño e Investigación",
+      "description": "El diseño está en el núcleo de todo lo que hago. Puedo ayudarte a comunicar tu marca a través de un diseño pensativo, inventivo y efectivo."
+    },
+    "accessibility": {
+      "title": "Accesibilidad",
+      "description": "He estado construyendo sitios web accesibles y de alto rendimiento durante más de 10 años. La accesibilidad es increíblemente importante para mí en todo lo que hago. El propósito de las plataformas digitales que construyo es romper barreras y ayudar a más personas a comunicarse efectivamente. Es inaceptable que millones de personas en todo el mundo tengan que navegar por una web que los hace sentir invisibles. Los sitios web accesibles mejoran la experiencia del usuario, te protegen de demandas y abren nuevos mercados."
+    },
+    "analytics": {
+      "title": "Analítica",
+      "description": "Un gran diseño es impulsado por grandes datos. Me aseguro de entender los objetivos comerciales y que tu estrategia digital esté alineada con los objetivos comerciales. Siempre que se requieren cambios, me esfuerzo por medir todos los cambios y estoy listo para revertir a cambios anteriores para optimizar cualquier métrica requerida. Actualizaciones impulsadas por conocimientos que se centran en retornos de mayor valor"
+    }
+  },
+  "about": {
+    "title": "Acerca de mí",
+    "content": [
+      "Comencé mi carrera como diseñador gráfico con una formación en marketing, algunas clases de diseño y una copia de Photoshop. Era un generalista con muchos intereses, obsesiones breves, pero sin una pasión única. Eso cambió después de comprometerme a aprender a programar por mi cuenta. La programación era un pasatiempo pero a medida que aprendía, me di cuenta de que podía canalizar mucho de lo que me interesaba en esta única habilidad. 10 años después, todavía soy un generalista pero ahora eso es mi mayor activo. He encontrado mi pasión en sintetizar muchas disciplinas para terminar con un proyecto cohesivo y detallado impulsado por objetivos, datos y resultados.",
+      "Construyo software y experiencias web que son funcionales y hermosas sin sacrificar una por la otra. He construido para empresas a lo largo del espectro y no importa la escala del proyecto, mis valores son los mismos. Diseño para cumplir con los KPI, pero planeo la escalabilidad, para el usuario y para los futuros desarrolladores también. Mi interés en la accesibilidad realmente comenzó como una búsqueda para evitar errores prevenibles. La miopía es humana pero en el código eso puede resultar en una supervisión fatal y los desarrolladores tienen una responsabilidad particular de trabajar duro para contrarrestar eso. La empatía, conocer las necesidades de tus usuarios, es tan importante para el éxito como conocer sus motivaciones.",
+      "Ya sea que trabaje solo o construyendo un equipo, mi objetivo es entregar productos que cumplan con los objetivos del cliente con prácticas de código SOLID y diseño analítico medido. Tengo experiencia en ad-tech, mar-tech, fin-tech y e-commerce y he descubierto que, independientemente de la industria, la clave para un buen producto es conocer el negocio íntimamente. Creo firmemente en empoderar a los equipos para evolucionar a través de la propiedad del código, la comunicación abierta, modelando metodologías ágiles y enfatizando las mejores prácticas estándar de la industria son los ingredientes para un gran producto y clave para construir una cultura que lo sostenga."
+    ]
+  },
+  "footer": {
+    "first": "¿Tienes una idea para un proyecto, un sitio web o algo más emocionante?",
+    "second": "Hablemos",
+    "cta": "Di hola"
+  }
+}
