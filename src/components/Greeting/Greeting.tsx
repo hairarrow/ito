@@ -4,6 +4,7 @@ import { useAnimation } from "./Greeting.animation";
 import FEATURED_WORK from "./FEATURED_WORK";
 import { ContactContext } from "../Contact/Contact.context";
 import Button from "../Button";
+import { useTranslation } from "next-i18next";
 
 const TypingDots = () => (
   <span className="typing-dots">
@@ -14,6 +15,7 @@ const TypingDots = () => (
 );
 
 const Greeting = () => {
+  const { t } = useTranslation();
   const { dispatch } = useContext(ContactContext);
   const containerRef = useRef(null);
   useAnimation(containerRef);
@@ -26,7 +28,7 @@ const Greeting = () => {
         <header className="greeting-container contained">
           <p className="greeting greeting--hello" aria-label="Hey">
             <TypingDots />
-            <span className="greeting-text">Hey! I'm Emmanuel Herrero</span>
+            <span className="greeting-text">{t("greeting")}</span>
 
             <span role="img" aria-label="wave" className="greeting-wave">
               👋
@@ -35,7 +37,7 @@ const Greeting = () => {
 
           <p className="greeting greeting--name greeting--typing">
             <TypingDots />
-            <span className="greeting-text">I build things with code</span>
+            <span className="greeting-text">{t("description")}</span>
           </p>
         </header>
 
@@ -43,18 +45,14 @@ const Greeting = () => {
           className="lead contained"
           aria-label="I build thoughtful experiences powered by code"
         >
-          Thoughtful Digital Experiences Tailored for Growth
+          {t("title")}
         </p>
 
-        <p className="lead lead--sub contained">
-          As a designer &amp; full-stack developer based in California, I craft
-          simple, scalable, and data-driven solutions to drive growth and
-          enhance user experience.
-        </p>
+        <p className="lead lead--sub contained">{t("subtitle")}</p>
 
         <span className="button-container">
           <Button className="bt-1" onClick={toggleMsg}>
-            Get in Touch
+            {t("cta")}
           </Button>
         </span>
       </section>
@@ -84,7 +82,7 @@ const Greeting = () => {
                       href={url}
                       className="featured-item-link"
                     >
-                      Visit Page
+                      {t("visit")}
                     </a>
                   </div>
 
@@ -96,14 +94,14 @@ const Greeting = () => {
                     ))}
                   </p>
 
-                  <h2 className="featured-item-header-title">{title}</h2>
+                  <h2 className="featured-item-header-title">{t(title)}</h2>
                 </header>
 
-                <p className="featured-item-description">{description}</p>
+                <p className="featured-item-description">{t(description)}</p>
 
                 {featuredIn && (
                   <aside className="featured-item-in">
-                    <h2>Featured In</h2>
+                    <h2>{t("featuredIn")}</h2>
                     <div className="featured-item-in-publication">
                       {featuredIn.map(({ name, link, image }) => (
                         <a

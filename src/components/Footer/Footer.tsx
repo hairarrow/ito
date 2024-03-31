@@ -7,6 +7,7 @@ import Button from "../Button";
 import { ContactContext } from "../Contact/Contact.context";
 import useAnalytics from "../../hooks/useAnalytics";
 import SocialMedia from "./SocialMedia";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
   const { dispatch } = useContext(ContactContext);
@@ -15,6 +16,7 @@ const Footer = () => {
   const [hasPlayed, setHasPlayed] = useState(false);
   const [scrollPosition, cleanupScroll] = useScrollPosition(containerRef);
   const analytics = useAnalytics();
+  const { t } = useTranslation();
 
   const toggleMsg = () => dispatch({ type: "UpdateShowMessage", value: true });
 
@@ -65,12 +67,10 @@ const Footer = () => {
 
   return (
     <FooterStyles ref={containerRef}>
-      <Message className="ms-1 message--question">
-        Do you have an idea for a project, website, or something else exciting?
-      </Message>
-      <Message className="ms-2">Lets talk.</Message>
+      <Message className="ms-1 message--question">{t("footer.first")}</Message>
+      <Message className="ms-2">{t("footer.second")}</Message>
       <Button className="bt-2" onClick={toggleMsg}>
-        Say Hello
+        {t("footer.cta")}
       </Button>
       <SocialMedia />
     </FooterStyles>

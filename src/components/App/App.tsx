@@ -7,24 +7,26 @@ import Footer from "../Footer";
 import Contact from "../Contact";
 import { ContactContextProvider } from "../Contact/Contact.context";
 import useAnalytics from "../../hooks/useAnalytics";
+import LanguageSwitcher from "../LanguageSwitcher";
 
-const App = () => {
-	const analytics = useAnalytics();
+const App = ({ locale }: { locale: string }) => {
+  const analytics = useAnalytics();
 
-	useEffect(() => {
-		analytics.logEvent<string>("page_view");
-	}, []);
+  useEffect(() => {
+    analytics.logEvent<string>("page_view");
+  }, []);
 
-	return (
-		<ContactContextProvider>
-			<Contact />
-			<Greeting />
-			<Conversation />
-			<Services />
-			<About />
-			<Footer />
-		</ContactContextProvider>
-	);
+  return (
+    <ContactContextProvider>
+      <LanguageSwitcher />
+      <Contact />
+      <Greeting />
+      <Conversation />
+      <Services />
+      <About />
+      <Footer />
+    </ContactContextProvider>
+  );
 };
 
 export default App;

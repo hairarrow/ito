@@ -1,16 +1,18 @@
 import ServicesStyles from "./Services.styles";
 import { useRef } from "react";
 import useAnimation from "./Services.animation";
+import { useTranslation } from "react-i18next";
 
 // Services animation located in Conversation
 
 const Service = ({ id, title, description, tags }) => {
   const containerRef = useRef<HTMLElement>(null);
+  const { t } = useTranslation();
   useAnimation(containerRef, id);
   return (
     <article ref={containerRef} key={id} className={`service service--${id}`}>
-      <h2 className="service-title">{title}</h2>
-      <p className="service-description">{description}</p>
+      <h2 className="service-title">{t(title)}</h2>
+      <p className="service-description">{t(description)}</p>
       <ul className="service-tags">
         {tags.map((tag) => (
           <li key={tag} className="service-tag">
@@ -33,9 +35,8 @@ const Services = () => {
 const SERVICES = [
   {
     id: "tech",
-    title: "Technology",
-    description:
-      "I have over 10 years of experience building accessible and ADA-compliant websites and applications and services for a wide range of clients – including B2B, B2C, financial, mar-tech, and e-commerce – using platforms and technologies including Shopify, Stripe, Plaid, Node, React, GraphQL, and more.",
+    title: "services.technology.title",
+    description: "services.technology.description",
     tags: [
       "SOLID Code",
       "Domain-Driven Design",
@@ -59,9 +60,8 @@ const SERVICES = [
   },
   {
     id: "design",
-    title: "Design & Research",
-    description:
-      "Design is at the core of everything I do. I can help you communicate your brand through thoughtful, inventive, and effective design.",
+    title: "services.design.title",
+    description: "services.design.description",
     tags: [
       "Field Studies",
       "User Interviews",
@@ -79,9 +79,8 @@ const SERVICES = [
   },
   {
     id: "access",
-    title: "Accessibility",
-    description:
-      "I've been building accessible, high-performing websites for over 10 years. Accessibility is incredibly important for me in everything I do. The purpose of the digital platforms I build for is to break barriers and help more people communicate effectively. It is unacceptable that millions of people around the world have to go through a web that makes them feel invisible. Accessible websites improve user experience, protect you from lawsuits, open new markets.",
+    title: "services.accessibility.title",
+    description: "services.accessibility.description",
     tags: [
       "AATT (Automated Accessibility Testing Tool)",
       "A11Y",
@@ -94,9 +93,8 @@ const SERVICES = [
   },
   {
     id: "analytics",
-    title: "Analytics",
-    description:
-      "Great design is driven by great data. I make sure I understand business goals and that your digital strategy is aligned with business goals. Whenever changes are required, I strive to measure all changes and I'm ready to revert to previous changes to optimize for any required metrics. Insight driven updates that focus on highest value returns",
+    title: "services.analytics.title",
+    description: "services.analytics.description",
     tags: [
       "Mixpanel",
       "Measurement Strategy",

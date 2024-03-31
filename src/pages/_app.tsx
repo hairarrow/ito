@@ -1,25 +1,26 @@
-import App from "next/app";
+import { appWithTranslation } from "next-i18next";
 import Head from "next/head";
 import { ThemeProvider } from "styled-components";
 import theme from "../styles/theme";
 import GlobalStyle from "../styles/global";
 import { META } from "./_document";
 
-export default class MyApp extends App {
-	render() {
-		const { Component, pageProps } = this.props;
-		return (
-			<>
-				<Head>
-					<title>{META.title}</title>
-				</Head>
-				<ThemeProvider theme={theme}>
-					<>
-						<GlobalStyle />
-						<Component {...pageProps} />
-					</>
-				</ThemeProvider>
-			</>
-		);
-	}
-}
+import { AppProps } from "next/app";
+
+const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
+  return (
+    <>
+      <Head>
+        <title>{META.title}</title>
+      </Head>
+      <ThemeProvider theme={theme}>
+        <>
+          <GlobalStyle />
+          <Component {...pageProps} />
+        </>
+      </ThemeProvider>
+    </>
+  );
+};
+
+export default appWithTranslation(MyApp);
