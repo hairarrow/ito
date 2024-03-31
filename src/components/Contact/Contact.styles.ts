@@ -230,6 +230,7 @@ const Styled = styled.section`
   }
 
   textarea {
+    width: 100%;
     padding: 16px 0;
     line-height: 1.6;
   }

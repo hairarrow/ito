@@ -17,15 +17,14 @@
   "license": "ISC",
   "dependencies": {
     "@react-hook/intersection-observer": "^3.1.1",
-    "animejs": "^3.2.1",
+    "animejs": "^3.2.2",
     "clsx": "^2.0.0",
-    "eslint-config-next": "^14.1.4",
     "firebase": "^8.2.4",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "next": "^14.1.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "styled-components": "^5.2.1"
+    "styled-components": "^6.1.8"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^10.0.5",
@@ -33,15 +32,11 @@
     "@types/animejs": "^3.1.2",
     "@types/lodash": "^4.14.168",
     "@types/next": "^9.0.0",
-    "@types/node": "^14.14.22",
-    "@types/react": "^17.0.0",
+    "@types/node": "^20.12.2",
+    "@types/react": "^18.2.73",
     "@types/styled-components": "^5.1.7",
-    "babel-plugin-styled-components": "^1.12.0",
-    "cpx": "^1.5.0",
-    "cross-env": "^7.0.3",
     "firebase-tools": "^9.2.2",
-    "rimraf": "^3.0.2",
-    "typescript": "^4.1.3"
+    "typescript": "^5.4.3"
   },
   "prettier": {}
 }
