@@ -16,69 +16,69 @@ const meta_map = {
   url: ["og:url"],
 };
 
-export default class MyDocument extends Document {
-  static async getInitialProps(ctx) {
-    const sheet = new ServerStyleSheet();
-    const originalRenderPage = ctx.renderPage;
+const MyDocument = ({ styles }) => {
+  return (
+    <Html lang="en">
+      <Head>
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
+        {Object.keys(meta_map).map((k) => {
+          return meta_map[k].map((kk) => (
+            <meta key={kk} name={kk} content={META[k]} />
+          ));
+        })}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image:alt" content={META.title} />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://herrero.io" />
+      </Head>
+      <body>
+        <Main />
+        <NextScript />
+        {styles}
+      </body>
+    </Html>
+  );
+};
 
-    try {
-      ctx.renderPage = () =>
-        originalRenderPage({
-          enhanceApp: (App) => (props) =>
-            sheet.collectStyles(<App {...props} />),
-        });
+MyDocument.getInitialProps = async (ctx) => {
+  const sheet = new ServerStyleSheet();
+  const originalRenderPage = ctx.renderPage;
 
-      const initialProps = await Document.getInitialProps(ctx);
-      return {
-        ...initialProps,
-        styles: (
-          <>
-            {initialProps.styles}
-            {sheet.getStyleElement()}
-          </>
-        ),
-      };
-    } finally {
-      sheet.seal();
-    }
+  try {
+    ctx.renderPage = () =>
+      originalRenderPage({
+        enhanceApp: (App) => (props) => sheet.collectStyles(<App {...props} />),
+      });
+
+    const initialProps = await Document.getInitialProps(ctx);
+    return {
+      ...initialProps,
+      styles: (
+        <>
+          {initialProps.styles}
+          {sheet.getStyleElement()}
+        </>
+      ),
+    };
+  } finally {
+    sheet.seal();
   }
+};
 
-  render() {
-    return (
-      <Html lang="en">
-        <Head>
-          <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="/apple-touch-icon.png"
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="/favicon-32x32.png"
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="/favicon-16x16.png"
-          />
-          {Object.keys(meta_map).map((k) => {
-            return meta_map[k].map((kk) => (
-              <meta key={kk} name={kk} content={META[k]} />
-            ));
-          })}
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:image:alt" content={META.title} />
-          <meta name="robots" content="index, follow" />
-          <link rel="canonical" href="https://herrero.io" />
-        </Head>
-        <body>
-          <Main />
-          <NextScript />
-        </body>
-      </Html>
-    );
-  }
-}
+export default MyDocument;
