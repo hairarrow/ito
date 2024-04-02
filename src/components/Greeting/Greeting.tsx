@@ -47,9 +47,8 @@ const Greeting = () => {
         </p>
 
         <p className="lead lead--sub contained">
-          As a designer &amp; full-stack developer based in California, I craft
-          simple, scalable, and data-driven solutions to drive growth and
-          enhance user experience.
+          As a designer &amp; full-stack developer, I craft simple, scalable,
+          and data-driven solutions to drive growth and enhance user experience.
         </p>
 
         <span className="button-container">
