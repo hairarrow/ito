@@ -181,25 +181,34 @@ const StyledGreeting = styled.article`
     opacity: 0;
     transform-origin: bottom left;
 
+    &--title {
+      max-width: 326px;
+      line-height: 1.1;
+    }
+
     &--sub {
       font-weight: 500;
       font-size: 14px;
-      line-height: 28px;
+      line-height: 1.6;
     }
 
     @media (${(props) => props.theme.breakpoints.sm.up}) {
       font-size: 28px;
+      padding-left: 0;
+      padding-right: 0;
+
+      &--title {
+        max-width: 420px;
+      }
 
       &--sub {
         font-size: 16px;
-        line-height: 36px;
         max-width: 90%;
       }
     }
 
     @media (${(props) => props.theme.breakpoints.md.up}) {
       font-size: 32px;
-      line-height: 48px;
 
       &--sub {
         font-size: 18px;
@@ -208,22 +217,26 @@ const StyledGreeting = styled.article`
 
     @media (${(props) => props.theme.breakpoints.lg.up}) {
       font-size: 42px;
-      line-height: 58px;
+
+      &--title {
+        max-width: 640px;
+      }
 
       &--sub {
         font-size: 18px;
-        line-height: 36px;
       }
     }
 
     @media (${(props) => props.theme.breakpoints.xl.up}) {
       font-size: 3vw;
-      line-height: 1.2;
+
+      &--title {
+        max-width: 42svw;
+      }
 
       &--sub {
         font-size: 1vw;
-        line-height: 1.8;
-        max-width: 90%;
+        max-width: 36svw;
       }
     }
   }

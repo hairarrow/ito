@@ -7,6 +7,7 @@ import Button from "../Button";
 import { ContactContext } from "../Contact/Contact.context";
 import useAnalytics from "../../hooks/useAnalytics";
 import SocialMedia from "./SocialMedia";
+import MailIcon from "../MailIcon";
 
 const Footer = () => {
   const { dispatch } = useContext(ContactContext);
@@ -70,6 +71,7 @@ const Footer = () => {
       </Message>
       <Message className="ms-2">Lets talk.</Message>
       <Button className="bt-2" onClick={toggleMsg}>
+        <MailIcon />
         Say Hello
       </Button>
       <SocialMedia />

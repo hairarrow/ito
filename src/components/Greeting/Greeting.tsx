@@ -4,6 +4,7 @@ import { useAnimation } from "./Greeting.animation";
 import FEATURED_WORK from "./FEATURED_WORK";
 import { ContactContext } from "../Contact/Contact.context";
 import Button from "../Button";
+import MailIcon from "../MailIcon";
 
 const TypingDots = () => (
   <span className="typing-dots">
@@ -35,24 +36,27 @@ const Greeting = () => {
 
           <p className="greeting greeting--name greeting--typing">
             <TypingDots />
-            <span className="greeting-text">I build things with code</span>
+            <span className="greeting-text">
+              I love building things with code
+            </span>
           </p>
         </header>
 
         <p
-          className="lead contained"
+          className="lead lead--title contained"
           aria-label="I build thoughtful experiences powered by code"
         >
-          Thoughtful Digital Experiences Tailored for Growth
+          Delightful experiences that <wbr /> drive growth
         </p>
 
         <p className="lead lead--sub contained">
-          As a designer &amp; full-stack developer, I craft simple, scalable,
-          and data-driven solutions to drive growth and enhance user experience.
+          I’m a designer &amp; full-stack developer creating simple, scalable
+          solutions that delight people and deliver real impact.
         </p>
 
         <span className="button-container">
           <Button className="bt-1" onClick={toggleMsg}>
+            <MailIcon />
             Get in Touch
           </Button>
         </span>
