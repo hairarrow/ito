@@ -6,3 +6,4 @@ dist/
 firebase-debug.log
 .runtimeconfig.json
 firestore-debug.log
+.vercel
