@@ -8,7 +8,7 @@
     "node": ">=18.0.0"
   },
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "test": "next build"
   },
@@ -21,22 +21,25 @@
     "clsx": "^2.0.0",
     "firebase": "^8.2.4",
     "lodash": "^4.17.21",
-    "next": "^14.1.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "next": "15.0.3",
+    "react": "19.0.0-rc-66855b96-20241106",
+    "react-dom": "19.0.0-rc-66855b96-20241106",
     "styled-components": "^6.1.8"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "^10.0.5",
+    "@next/bundle-analyzer": "15.0.3",
     "@opentelemetry/api": "^1.8.0",
     "@types/animejs": "^3.1.2",
     "@types/lodash": "^4.14.168",
     "@types/next": "^9.0.0",
     "@types/node": "^20.12.2",
-    "@types/react": "^18.2.73",
+    "@types/react": "npm:types-react@19.0.0-rc.1",
     "@types/styled-components": "^5.1.7",
     "firebase-tools": "^9.2.2",
     "typescript": "^5.4.3"
   },
-  "prettier": {}
+  "prettier": {},
+  "overrides": {
+    "@types/react": "npm:types-react@19.0.0-rc.1"
+  }
 }
