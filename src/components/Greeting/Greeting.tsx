@@ -36,7 +36,7 @@ const Greeting = () => {
 
           <p className="greeting greeting--name greeting--typing">
             <TypingDots />
-            <span className="greeting-text">
+            <span className="greeting-text" style={{ opacity: 0 }}>
               I love building things with code
             </span>
           </p>
