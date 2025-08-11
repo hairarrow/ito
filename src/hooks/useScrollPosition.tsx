@@ -18,18 +18,19 @@ const useScrollPosition = (
   const onScroll = throttle(handleScroll, 200);
   const scroll = useCallback(onScroll, [el]);
   const onDestroy = () => {
-    wdw.current.removeEventListener("scroll", scroll);
+    if (wdw.current) wdw.current.removeEventListener("scroll", scroll);
   };
   const destroy = useCallback(onDestroy, [el]);
 
   useEffect(() => {
+    if (!wdw.current) return;
     wdw.current.addEventListener("scroll", scroll);
 
     return destroy;
   }, [el]);
 
   useEffect(() => {
-    setDistanceFromTop(wdw.current.scrollY);
+    if (wdw.current) setDistanceFromTop(wdw.current.scrollY);
   }, []);
 
   if (typeof window === "undefined" || !el.current) return [];
