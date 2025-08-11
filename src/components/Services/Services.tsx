@@ -106,7 +106,7 @@ const SERVICES = [
       "Attribution Modeling",
       "Customer Segmentation",
       "A/B Test Design",
-      "Mutivariate Test Design",
+      "Multivariate Test Design",
       "Data Visualization",
     ],
   },
