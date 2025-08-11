@@ -21,6 +21,11 @@ export function useAnimation(ref: any) {
         easing: "easeOutExpo",
       })
       .add({
+        targets: ".greeting--name .greeting-text",
+        opacity: 0,
+        duration: 0,
+      })
+      .add({
         targets: ".greeting--name",
         translateY: ["-100%", "0%"],
         opacity: 1,
@@ -40,6 +45,8 @@ export function useAnimation(ref: any) {
       .add({
         targets: ".greeting--name",
         opacity: 0,
+        delay: 1400,
+        duration: 200,
         complete() {
           toggleTypingStatus(".greeting--name");
           document
@@ -53,21 +60,19 @@ export function useAnimation(ref: any) {
         opacity: 1,
         duration: 280,
       })
-      .add(
-        {
-          targets: ".greeting--name .greeting-text",
-          opacity: 1,
-          complete() {
-            anime({
-              easing: "easeOutExpo",
-              targets: [".lead", ".featured", ".featured-item"],
-              translateY: ["100%", "0%"],
-              opacity: 1,
-            });
-          },
+      .add({
+        targets: ".greeting--name .greeting-text",
+        opacity: 1,
+        duration: 200,
+        complete() {
+          anime({
+            easing: "easeOutExpo",
+            targets: [".lead", ".featured", ".featured-item"],
+            translateY: ["100%", "0%"],
+            opacity: 1,
+          });
         },
-        "-=1200"
-      )
+      })
       .add(
         {
           targets: ".bt-1",
