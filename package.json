@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
-    "test": "next build"
+    "test": "vitest run"
   },
   "keywords": [],
   "author": "",
@@ -36,7 +36,8 @@
     "@types/react": "npm:types-react@19.0.0-rc.1",
     "@types/styled-components": "^5.1.7",
     "firebase-tools": "^9.2.2",
-    "typescript": "^5.4.3"
+    "typescript": "^5.4.3",
+    "vitest": "^1.6.0"
   },
   "prettier": {},
   "overrides": {
