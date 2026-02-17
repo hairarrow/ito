@@ -36,9 +36,7 @@ const Greeting = () => {
 
           <p className="greeting greeting--name greeting--typing">
             <TypingDots />
-            <span className="greeting-text">
-              I love building things with code
-            </span>
+            <span className="greeting-text">I love building things with code</span>
           </p>
         </header>
 
